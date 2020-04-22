@@ -193,20 +193,7 @@
                 <div class="clearfix"></div>
             </div>
 
-            {{--  Footer  --}}
-            <footer>
-                <div class="pull-right hidden-xs">
-                    Anything you want
-                </div>
-
-                <strong>
-                    Created with
-                    <i class="fa fa-heart"></i>
-                    by
-                    <a href="https://laravelfactory.com" target="_blank">Laravel Factory</a>.
-                </strong>
-                <div class="clearfix"></div>
-            </footer>
+          
         </div>
     </div>
 
