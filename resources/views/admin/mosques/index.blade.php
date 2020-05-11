@@ -1,15 +1,15 @@
 @extends('admin.layouts.app', ['page' => 'mosque'])
 
-@section('title', 'Mosques')
+@section('title', 'المساجد')
 
 @section('content')
 <div class="x_title">
-    <h2>Mosques</h2>
+    <h2>المساجد</h2>
 
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.mosques.create') }}"
     >
-        Add New
+        إضافة جديد
     </a>
 
     <div class="clearfix"></div>
@@ -21,9 +21,9 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Date Construction</th>
-            <th>Action</th>
+            <th>الإسم</th>
+            <th>تاريخ الإنشاء</th>
+            <th>العمليات</th>
         </tr>
 
         @forelse ($mosques as $mosque)

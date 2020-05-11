@@ -1,11 +1,11 @@
 @extends('admin.layouts.app', ['page' => 'room'])
 
-@section('title', 'Add New Room')
+@section('title', 'إضافة غرفة جديدة')
 
 @section('content')
 
 <div class="x_title">
-    <h2>Add New Room</h2>
+    <h2>إضافة غرفة جديدة</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -17,24 +17,24 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">الإسم</label>
             <input type="text"
                 class="form-control"
                 name="name"
                 required
-                placeholder="Name"
+                placeholder="الإسم"
                 value="{{ old('name') }}"
                 id="name"
             >
         </div>
 
         <div class="form-group">
-            <label for="capacity">Capacity</label>
+            <label for="capacity">السعة</label>
             <input type="number"
                 class="form-control"
                 name="capacity"
                 required
-                placeholder="Capacity"
+                placeholder="السعة"
                 value="{{ old('capacity') }}"
                 step="any"
                 id="capacity"
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            <label for="floor">Floor</label>
+            <label for="floor">الطابق</label>
             <select class="form-control"
                 name="floor"
                 required
@@ -59,7 +59,7 @@
         </div>
 
         <div class="form-group">
-            <label for="mosque-id">Mosque</label>
+            <label for="mosque-id">الجامع</label>
             <select class="form-control"
                 name="mosque_id"
                 required

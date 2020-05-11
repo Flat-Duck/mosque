@@ -1,11 +1,11 @@
 @extends('admin.layouts.app', ['page' => 'mosque'])
 
-@section('title', 'Add New Mosque')
+@section('title', 'إضافة مسجد جديد')
 
 @section('content')
 
 <div class="x_title">
-    <h2>Add New Mosque</h2>
+    <h2>إضافة مسجد جديد</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -17,46 +17,46 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">الإسم</label>
             <input type="text"
                 class="form-control"
                 name="name"
                 required
-                placeholder="Name"
+                placeholder="الإسم"
                 value="{{ old('name') }}"
                 id="name"
             >
         </div>
 
         <div class="form-group">
-            <label for="address">Address</label>
+            <label for="address">العنوان</label>
             <textarea class="form-control"
                 name="address"
                 id="address"
                 required
-                placeholder="Address"
+                placeholder="العنوان"
             >{{ old('address') }}</textarea>
         </div>
 
         <div class="form-group">
-            <label for="date_construction">Date Construction</label>
+            <label for="date_construction">تاريخ الإنشاء</label>
             <input type="date"
                 class="form-control"
                 name="date_construction"
                 required
-                placeholder="Date Construction"
+                placeholder="تاريخ الإنشاء"
                 value="{{ old('date_construction') }}"
                 id="date_construction"
             >
         </div>
 
         <div class="form-group">
-            <label for="street">Street</label>
+            <label for="street">الشارع</label>
             <textarea class="form-control"
                 name="street"
                 id="street"
                 required
-                placeholder="Street"
+                placeholder="الشارع"
             >{{ old('street') }}</textarea>
         </div>
     </div>

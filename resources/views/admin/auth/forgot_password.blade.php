@@ -15,7 +15,7 @@
         @csrf
 
         <div>
-            <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+            <input type="email" name="email" class="form-control" placeholder="البريد الإلكتروني" required autofocus>
         </div>
 
         <div>

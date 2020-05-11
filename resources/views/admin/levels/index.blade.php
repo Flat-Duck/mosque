@@ -1,15 +1,15 @@
 @extends('admin.layouts.app', ['page' => 'level'])
 
-@section('title', 'Levels')
+@section('title', 'المستويات')
 
 @section('content')
 <div class="x_title">
-    <h2>Levels</h2>
+    <h2>المستويات</h2>
 
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.levels.create') }}"
     >
-        Add New
+        إضافة جديد
     </a>
 
     <div class="clearfix"></div>
@@ -21,8 +21,8 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Action</th>
+            <th>الإسم</th>
+            <th>العمليات</th>
         </tr>
 
         @forelse ($levels as $level)

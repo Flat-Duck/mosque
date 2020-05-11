@@ -9,7 +9,7 @@
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.nationalities.create') }}"
     >
-        Add New
+        إضافة جديد
     </a>
 
     <div class="clearfix"></div>
@@ -21,8 +21,8 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Action</th>
+            <th>الإسم</th>
+            <th>العمليات</th>
         </tr>
 
         @forelse ($nationalities as $nationality)

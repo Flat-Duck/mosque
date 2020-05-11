@@ -1,11 +1,11 @@
 @extends('admin.layouts.app', ['page' => 'level'])
 
-@section('title', 'Add New Level')
+@section('title', 'إضافة مستوى جديد')
 
 @section('content')
 
 <div class="x_title">
-    <h2>Add New Level</h2>
+    <h2>إضافة مستوى جديد</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -17,12 +17,12 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">الإسم</label>
             <input type="text"
                 class="form-control"
                 name="name"
                 required
-                placeholder="Name"
+                placeholder="الإسم"
                 value="{{ old('name') }}"
                 id="name"
             >

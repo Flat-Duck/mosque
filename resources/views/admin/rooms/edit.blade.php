@@ -15,24 +15,24 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">الإسم</label>
             <input type="text"
                 class="form-control"
                 name="name"
                 required
-                placeholder="Name"
+                placeholder="الإسم"
                 value="{{ old('name', $room->name) }}"
                 id="name"
             >
         </div>
 
         <div class="form-group">
-            <label for="capacity">Capacity</label>
+            <label for="capacity">السعة</label>
             <input type="number"
                 class="form-control"
                 name="capacity"
                 required
-                placeholder="Capacity"
+                placeholder="السعة"
                 value="{{ old('capacity', $room->capacity) }}"
                 step="any"
                 id="capacity"
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            <label for="floor">Floor</label>
+            <label for="floor">الطابق</label>
             <select class="form-control"
                 name="floor"
                 required
@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-group">
-            <label for="mosque-id">Mosque</label>
+            <label for="mosque-id">الجامع</label>
             <select class="form-control"
                 name="mosque_id"
                 required

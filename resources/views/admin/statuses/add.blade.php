@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="x_title">
-    <h2>Add New Status</h2>
+    <h2>إضافة جديد Status</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -17,12 +17,12 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">الإسم</label>
             <input type="text"
                 class="form-control"
                 name="name"
                 required
-                placeholder="Name"
+                placeholder="الإسم"
                 value="{{ old('name') }}"
                 id="name"
             >

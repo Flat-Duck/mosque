@@ -9,7 +9,7 @@
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.students.create') }}"
     >
-        Add New
+        إضافة جديد
     </a>
 
     <div class="clearfix"></div>
@@ -21,12 +21,12 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>National Number</th>
-            <th>Name</th>
-            <th>Date Birth</th>
-            <th>Phone</th>
-            <th>Nationality</th>
-            <th>Action</th>
+            <th>الرقم الوطني</th>
+            <th>الإسم</th>
+            <th>تاريخ الميلاد</th>
+            <th>رقم الهاتف</th>
+            <th>الجنسية</th>
+            <th>العمليات</th>
         </tr>
 
         @forelse ($students as $student)

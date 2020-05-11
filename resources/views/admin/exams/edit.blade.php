@@ -15,24 +15,24 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="date">Date</label>
+            <label for="date">التاريخ</label>
             <input type="date"
                 class="form-control"
                 name="date"
                 required
-                placeholder="Date"
+                placeholder="التاريخ"
                 value="{{ old('date', $exam->date) }}"
                 id="date"
             >
         </div>
 
         <div class="form-group">
-            <label for="save">Save</label>
+            <label for="save">الحفظ</label>
             <input type="number"
                 class="form-control"
                 name="save"
                 required
-                placeholder="Save"
+                placeholder="الحفظ"
                 value="{{ old('save', $exam->save) }}"
                 step="any"
                 id="save"
@@ -40,12 +40,12 @@
         </div>
 
         <div class="form-group">
-            <label for="applied_rules">Applied Rules</label>
+            <label for="applied_rules">الأحكام التطبيقية</label>
             <input type="number"
                 class="form-control"
                 name="applied_rules"
                 required
-                placeholder="Applied Rules"
+                placeholder="الأحكام التطبيقية"
                 value="{{ old('applied_rules', $exam->applied_rules) }}"
                 step="any"
                 id="applied_rules"
@@ -53,12 +53,12 @@
         </div>
 
         <div class="form-group">
-            <label for="drawing">Drawing</label>
+            <label for="drawing">الرسم القرأني</label>
             <input type="number"
                 class="form-control"
                 name="drawing"
                 required
-                placeholder="Drawing"
+                placeholder="الرسم القرأني"
                 value="{{ old('drawing', $exam->drawing) }}"
                 step="any"
                 id="drawing"
@@ -66,12 +66,12 @@
         </div>
 
         <div class="form-group">
-            <label for="pronunciation">Pronunciation</label>
+            <label for="pronunciation">أحكام التجويد</label>
             <input type="number"
                 class="form-control"
                 name="pronunciation"
                 required
-                placeholder="Pronunciation"
+                placeholder="أحكام التجويد"
                 value="{{ old('pronunciation', $exam->pronunciation) }}"
                 step="any"
                 id="pronunciation"
@@ -113,7 +113,7 @@
         </div>
 
         <div class="form-group">
-            <label for="level-id">Level</label>
+            <label for="level-id">المستوى</label>
             <select class="form-control"
                 name="level_id"
                 required

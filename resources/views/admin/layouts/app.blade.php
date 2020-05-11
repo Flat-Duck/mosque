@@ -56,7 +56,7 @@
                                 <li {{ $page == 'mosque' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.mosques.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>Mosques</span>
+                                        <span>المساجد</span>
                                     </a>
                                 </li>
 
@@ -119,7 +119,7 @@
                                 <li {{ $page == 'level' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.levels.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>Levels</span>
+                                        <span>إدارة المستويات</span>
                                     </a>
                                 </li>
                             </ul>

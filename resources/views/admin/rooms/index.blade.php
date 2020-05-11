@@ -9,7 +9,7 @@
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.rooms.create') }}"
     >
-        Add New
+        إضافة جديد
     </a>
 
     <div class="clearfix"></div>
@@ -21,11 +21,11 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Capacity</th>
-            <th>Floor</th>
-            <th>Mosque</th>
-            <th>Action</th>
+            <th>الإسم</th>
+            <th>السعة</th>
+            <th>الطابق</th>
+            <th>الجامع</th>
+            <th>العمليات</th>
         </tr>
 
         @forelse ($rooms as $room)

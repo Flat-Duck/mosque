@@ -15,23 +15,23 @@
 
             <div class="box-body">
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">الإسم</label>
                     <input type="text"
                         name="name"
                         class="form-control"
                         id="name"
-                        placeholder="Name"
+                        placeholder="الإسم"
                         value="{{ old('name', $admin->name) }}"
                     >
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">البريد الإلكتروني address</label>
                     <input type="email"
                         name="email"
                         class="form-control"
                         id="email"
-                        placeholder="Email address"
+                        placeholder="البريد الإلكتروني address"
                         value="{{ old('email', $admin->email) }}"
                     >
                 </div>

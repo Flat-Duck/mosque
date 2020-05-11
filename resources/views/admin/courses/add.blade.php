@@ -1,11 +1,11 @@
 @extends('admin.layouts.app', ['page' => 'course'])
 
-@section('title', 'Add New Course')
+@section('title', 'إضافة دورة جديدة')
 
 @section('content')
 
 <div class="x_title">
-    <h2>Add New Course</h2>
+    <h2>إضافة دورة جديدة</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -17,12 +17,12 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="start_time">Start Time</label>
+            <label for="start_time">توقيت البداية</label>
             <input type="time"
                 class="form-control"
                 name="start_time"
                 required
-                placeholder="Start Time"
+                placeholder="توقيت البداية"
                 value="{{ old('start_time') }}"
                 step="2"
                 id="start_time"
@@ -30,12 +30,12 @@
         </div>
 
         <div class="form-group">
-            <label for="end_time">End Time</label>
+            <label for="end_time">توقيت النهاية</label>
             <input type="time"
                 class="form-control"
                 name="end_time"
                 required
-                placeholder="End Time"
+                placeholder="توقيت النهاية"
                 value="{{ old('end_time') }}"
                 step="2"
                 id="end_time"
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group">
-            <label for="level-id">Level</label>
+            <label for="level-id">المستوى</label>
             <select class="form-control"
                 name="level_id"
                 required

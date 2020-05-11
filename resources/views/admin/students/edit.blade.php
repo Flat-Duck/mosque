@@ -15,12 +15,12 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="national_number">National Number</label>
+            <label for="national_number">الرقم الوطني</label>
             <input type="number"
                 class="form-control"
                 name="national_number"
                 required
-                placeholder="National Number"
+                placeholder="الرقم الوطني"
                 value="{{ old('national_number', $student->national_number) }}"
                 step="any"
                 id="national_number"
@@ -28,58 +28,58 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">الإسم</label>
             <input type="text"
                 class="form-control"
                 name="name"
                 required
-                placeholder="Name"
+                placeholder="الإسم"
                 value="{{ old('name', $student->name) }}"
                 id="name"
             >
         </div>
 
         <div class="form-group">
-            <label for="date_birth">Date Birth</label>
+            <label for="date_birth">تاريخ الميلاد</label>
             <input type="date"
                 class="form-control"
                 name="date_birth"
                 required
-                placeholder="Date Birth"
+                placeholder="تاريخ الميلاد"
                 value="{{ old('date_birth', $student->date_birth) }}"
                 id="date_birth"
             >
         </div>
 
         <div class="form-group">
-            <label for="address">Address</label>
+            <label for="address">العنوان</label>
             <textarea class="form-control"
                 name="address"
                 id="address"
                 required
-                placeholder="Address"
+                placeholder="العنوان"
             >{{ old('address', $student->address) }}</textarea>
         </div>
 
         <div class="form-group">
-            <label for="phone">Phone</label>
+            <label for="phone">رقم الهاتف</label>
             <input type="text"
                 class="form-control"
                 name="phone"
                 required
-                placeholder="Phone"
+                placeholder="رقم الهاتف"
                 value="{{ old('phone', $student->phone) }}"
                 id="phone"
             >
         </div>
 
         <div class="form-group">
-            <label for="qualification">Qualification</label>
+            <label for="qualification">المؤهل التعليمي</label>
             <input type="text"
                 class="form-control"
                 name="qualification"
                 required
-                placeholder="Qualification"
+                placeholder="المؤهل التعليمي"
                 value="{{ old('qualification', $student->qualification) }}"
                 id="qualification"
             >
@@ -108,7 +108,7 @@
         </div>
 
         <div class="form-group">
-            <label for="nationality-id">Nationality</label>
+            <label for="nationality-id">الجنسية</label>
             <select class="form-control"
                 name="nationality_id"
                 required
@@ -159,7 +159,7 @@
         </div>
 
         <div class="form-group">
-            <label for="level-id">Level</label>
+            <label for="level-id">المستوى</label>
             <select class="form-control"
                 name="level_id"
                 required

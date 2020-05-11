@@ -9,7 +9,7 @@
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.courses.create') }}"
     >
-        Add New
+        إضافة جديد
     </a>
 
     <div class="clearfix"></div>
@@ -21,10 +21,10 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Level</th>
-            <th>Action</th>
+            <th>توقيت البداية</th>
+            <th>توقيت النهاية</th>
+            <th>المستوى</th>
+            <th>العمليات</th>
         </tr>
 
         @forelse ($courses as $course)

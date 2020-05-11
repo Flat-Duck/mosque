@@ -9,7 +9,7 @@
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.exams.create') }}"
     >
-        Add New
+        إضافة جديد
     </a>
 
     <div class="clearfix"></div>
@@ -21,12 +21,12 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Date</th>
-            <th>Save</th>
-            <th>Applied Rules</th>
-            <th>Drawing</th>
+            <th>التاريخ</th>
+            <th>الحفظ</th>
+            <th>الأحكام التطبيقية</th>
+            <th>الرسم القرأني</th>
             <th>Student</th>
-            <th>Action</th>
+            <th>العمليات</th>
         </tr>
 
         @forelse ($exams as $exam)

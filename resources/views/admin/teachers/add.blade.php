@@ -1,11 +1,11 @@
 @extends('admin.layouts.app', ['page' => 'teacher'])
 
-@section('title', 'Add New Teacher')
+@section('title', 'إضافة أستاذ جديد')
 
 @section('content')
 
 <div class="x_title">
-    <h2>Add New Teacher</h2>
+    <h2>إضافة أستاذ جديد</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -17,36 +17,36 @@
 
     <div class="box-body">
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">الإسم</label>
             <input type="text"
                 class="form-control"
                 name="name"
                 required
-                placeholder="Name"
+                placeholder="الإسم"
                 value="{{ old('name') }}"
                 id="name"
             >
         </div>
 
         <div class="form-group">
-            <label for="date_birth">Date Birth</label>
+            <label for="date_birth">تاريخ الميلاد</label>
             <input type="date"
                 class="form-control"
                 name="date_birth"
                 required
-                placeholder="Date Birth"
+                placeholder="تاريخ الميلاد"
                 value="{{ old('date_birth') }}"
                 id="date_birth"
             >
         </div>
 
         <div class="form-group">
-            <label for="family_booklet_number">Family Booklet Number</label>
+            <label for="family_booklet_number">رقم كتيب العائلة</label>
             <input type="number"
                 class="form-control"
                 name="family_booklet_number"
                 required
-                placeholder="Family Booklet Number"
+                placeholder="رقم كتيب العائلة"
                 value="{{ old('family_booklet_number') }}"
                 step="any"
                 id="family_booklet_number"
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group">
-            <label for="designation">Designation</label>
+            <label for="designation">طبيعة التكليف</label>
             <select class="form-control"
                 name="designation"
                 required
@@ -71,7 +71,7 @@
         </div>
 
         <div class="form-group">
-            <label for="description">Description</label>
+            <label for="description">الصفة</label>
             <select class="form-control"
                 name="description"
                 required
@@ -88,89 +88,89 @@
         </div>
 
         <div class="form-group">
-            <label for="date_designation">Date Designation</label>
+            <label for="date_designation">تاريخ التكليف</label>
             <input type="date"
                 class="form-control"
                 name="date_designation"
                 required
-                placeholder="Date Designation"
+                placeholder="تاريخ التكليف"
                 value="{{ old('date_designation') }}"
                 id="date_designation"
             >
         </div>
 
         <div class="form-group">
-            <label for="address">Address</label>
+            <label for="address">العنوان</label>
             <textarea class="form-control"
                 name="address"
                 id="address"
                 required
-                placeholder="Address"
+                placeholder="العنوان"
             >{{ old('address') }}</textarea>
         </div>
 
         <div class="form-group">
-            <label for="bank">Bank</label>
+            <label for="bank">المصرف</label>
             <input type="text"
                 class="form-control"
                 name="bank"
                 required
-                placeholder="Bank"
+                placeholder="المصرف"
                 value="{{ old('bank') }}"
                 id="bank"
             >
         </div>
 
         <div class="form-group">
-            <label for="branch">Branch</label>
+            <label for="branch">الفرع</label>
             <input type="text"
                 class="form-control"
                 name="branch"
                 required
-                placeholder="Branch"
+                placeholder="الفرع"
                 value="{{ old('branch') }}"
                 id="branch"
             >
         </div>
 
         <div class="form-group">
-            <label for="account">Account</label>
+            <label for="account">رقم الحساب</label>
             <input type="text"
                 class="form-control"
                 name="account"
                 required
-                placeholder="Account"
+                placeholder="رقم الحساب"
                 value="{{ old('account') }}"
                 id="account"
             >
         </div>
 
         <div class="form-group">
-            <label for="phone">Phone</label>
+            <label for="phone">رقم الهاتف</label>
             <input type="text"
                 class="form-control"
                 name="phone"
                 required
-                placeholder="Phone"
+                placeholder="رقم الهاتف"
                 value="{{ old('phone') }}"
                 id="phone"
             >
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">البريد الإلكتروني</label>
             <input type="email"
                 class="form-control"
                 name="email"
                 required
-                placeholder="Email"
+                placeholder="البريد الإلكتروني"
                 value="{{ old('email') }}"
                 id="email"
             >
         </div>
 
         <div class="form-group">
-            <label for="certificate">Certificate</label>
+            <label for="certificate">إجازة القرأن</label>
             <select class="form-control"
                 name="certificate"
                 required
@@ -187,36 +187,36 @@
         </div>
 
         <div class="form-group">
-            <label for="date_certificate">Date Certificate</label>
+            <label for="date_certificate">تاريخ الإجازة</label>
             <input type="date"
                 class="form-control"
                 name="date_certificate"
                 required
-                placeholder="Date Certificate"
+                placeholder="تاريخ الإجازة"
                 value="{{ old('date_certificate') }}"
                 id="date_certificate"
             >
         </div>
 
         <div class="form-group">
-            <label for="certificate_place">Certificate Place</label>
+            <label for="certificate_place">جهة الاصدار</label>
             <input type="text"
                 class="form-control"
                 name="certificate_place"
                 required
-                placeholder="Certificate Place"
+                placeholder="جهة الاصدار"
                 value="{{ old('certificate_place') }}"
                 id="certificate_place"
             >
         </div>
 
         <div class="form-group">
-            <label for="national_number">National Number</label>
+            <label for="national_number">الرقم الوطني</label>
             <input type="number"
                 class="form-control"
                 name="national_number"
                 required
-                placeholder="National Number"
+                placeholder="الرقم الوطني"
                 value="{{ old('national_number') }}"
                 step="any"
                 id="national_number"
@@ -224,7 +224,7 @@
         </div>
 
         <div class="form-group">
-            <label for="mosque-id">Mosque</label>
+            <label for="mosque-id">الجامع</label>
             <select class="form-control"
                 name="mosque_id"
                 required
@@ -241,7 +241,7 @@
         </div>
 
         <div class="form-group">
-            <label for="nationality-id">Nationality</label>
+            <label for="nationality-id">الجنسية</label>
             <select class="form-control"
                 name="nationality_id"
                 required
