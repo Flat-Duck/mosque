@@ -53,7 +53,11 @@
                         @method('DELETE')
 
                         <a onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }">
-                            <i class="fa fa-trash"></i>
+                          @if ($mosque->active)
+                                    <i data-toggle="tooltip" title="ايقاف" class='fa fa-lock'></i>
+                                    @else
+                                    <i data-toggle="tooltip" title="تفعيل" class='fa fa-lock-open'></i>
+                                    @endif
                         </a>
                     </form>
                 </td>
