@@ -18,7 +18,10 @@ const mix = require('laravel-mix');
 mix.styles('resources/css/admin/app.css', 'public/css/admin/app.css')
     .styles([
         'resources/css/admin/bootstrap.css',
-        'resources/css/admin/font-awesome.css',
+       'resources/css/admin/solid.css',
+       'resources/css/admin/font-awesome.css',
+       'resources/css/admin/regular.css',
+        'resources/css/admin/all.css',
         'resources/css/admin/pikaday.css',
         'resources/css/admin/gentelella.css',
         'resources/css/admin/pnotify.css',
@@ -26,11 +29,13 @@ mix.styles('resources/css/admin/app.css', 'public/css/admin/app.css')
 ;
 
 // Admin font awesome fonts
+mix.copyDirectory('resources/fonts', 'public/css/webfonts');
 mix.copyDirectory('resources/fonts', 'public/css/fonts');
 
 // Admin JS
 mix.scripts('resources/js/admin/app.js', 'public/js/admin/app.js'
     ).scripts([
+        'resources/js/admin/jquery.js',
         'resources/js/admin/jquery.js',
         'resources/js/admin/bootstrap.js',
         'resources/js/admin/pikaday.js',

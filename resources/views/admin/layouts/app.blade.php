@@ -10,19 +10,22 @@
 
     <link href="{{ mix('/css/admin/vendor.css') }}" rel="stylesheet">
     <link href="{{ mix('/css/admin/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/datatables.min.css" />
+    
+    
 
     {{-- You can put page wise internal css style in styles section --}}
     @stack('styles')
 </head>
-<body class="nav-md">
+<body dir="rtl" class="nav-md">
     <div class="container body">
         <div class="main_container">
             {{-- Sidebar --}}
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-                    <div class="navbar nav_title" style="border: 0;">
+                    <div class="navbar nav_title" >
                         <a href="{{ route('admin.dashboard') }}" class="site_title">
-                            <i class="fa fa-paw"></i>
+                            <i class="fa fa-mosque"></i>
                             <span>{{ config('app.name') }}</span>
                         </a>
                     </div>
@@ -34,7 +37,7 @@
                         </div>
 
                         <div class="profile_info">
-                            <span>Welcome,</span>
+                            <span>مرحباً,</span>
                             <h2>{{ Auth::guard('admin')->user()->name }}</h2>
                         </div>
                     </div>
@@ -43,83 +46,33 @@
                     {{-- Sidebar Menu --}}
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
-                            <h3>Menu</h3>
+                            <h3>القائمة</h3>
 
                             <ul class="nav side-menu">
                                 <li {{ $page == 'dashboard' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.dashboard') }}">
                                         <i class="fa fa-home"></i>
-                                        Dashboard
+                                        لوحة التحكم
                                     </a>
                                 </li>
 
                                 <li {{ $page == 'mosque' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.mosques.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>المساجد</span>
-                                    </a>
-                                </li>
-
-                                <li {{ $page == 'room' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.rooms.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Rooms</span>
-                                    </a>
-                                </li>
-
-                                <li {{ $page == 'student' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.students.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Students</span>
+                                        <i class="fa fa-mosque"></i>
+                                        <span>إدارة المساجد</span>
                                     </a>
                                 </li>
 
                                 <li {{ $page == 'teacher' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.teachers.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Teachers</span>
+                                        <i class="fa fa-user"></i>
+                                        <span>إدارة المعلمين</span>
                                     </a>
                                 </li>
-
-                                <li {{ $page == 'course' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.courses.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Courses</span>
-                                    </a>
-                                </li>
-
-                                <li {{ $page == 'nationality' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.nationalities.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Nationalities</span>
-                                    </a>
-                                </li>
-
-                                <li {{ $page == 'gender' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.genders.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Genders</span>
-                                    </a>
-                                </li>
-
-                                <li {{ $page == 'status' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.statuses.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Statuses</span>
-                                    </a>
-                                </li>
-
-                                <li {{ $page == 'exam' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.exams.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>Exams</span>
-                                    </a>
-                                </li>
-
-                                <li {{ $page == 'level' ? ' class=active' : '' }}>
-                                    <a href="{{ route('admin.levels.index') }}">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <span>إدارة المستويات</span>
+                                <li {{ $page == 'user' ? ' class=active' : '' }}>
+                                    <a href="{{ route('admin.users.index') }}">
+                                        <i class="fa fa-lock"></i>
+                                        <span>إدارة حسابات المشرفين</span>
                                     </a>
                                 </li>
                             </ul>
@@ -151,14 +104,14 @@
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li>
                                         <a href="{{ route('admin.profile') }}">
-                                            Profile
+                                            الملف الشخصي
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="{{ route('admin.logout') }}">
                                             <i class="fa fa-sign-out pull-right"></i>
-                                            Log Out
+                                            تسجيل الخروج
                                         </a>
                                     </li>
                                 </ul>
@@ -199,14 +152,26 @@
 
     <script src="{{ mix('/js/admin/vendor.js') }}"></script>
     <script src="{{ mix('/js/admin/app.js') }}"></script>
-
+    
+    
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/datatables.min.js"></script>
+    
     @if (session('message'))
         <script>
             showNotice("{{ session('type') }}", "{{ session('message') }}");
         </script>
     @endif
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable();
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        
+    </script>
 
     {{-- You can put page wise javascript in scripts section --}}
     @stack('scripts')
+
 </body>
 </html>

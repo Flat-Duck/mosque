@@ -6,7 +6,9 @@ use App\Teacher;
 use App\Mosque;
 use App\Nationality;
 use App\Gender;
-use App\Status;
+use App\User;
+//use App\Status;
+use App\Notifications\UserRegistered;
 use App\Http\Controllers\Controller;
 
 class TeacherController extends Controller
@@ -33,15 +35,18 @@ class TeacherController extends Controller
         $mosques = Mosque::all();
         $nationalities = Nationality::all();
         $genders = Gender::all();
-        $statuses = Status::all();
+    //    $statuses = Status::all();
 
         $designationOptions = Teacher::$designationOptions;
 
-        $descriptionOptions = Teacher::$descriptionOptions;
+         $descriptionOptions = Teacher::$descriptionOptions;
 
-        $certificateOptions = Teacher::$certificateOptions;
+         $certificateOptions = Teacher::$certificateOptions;
 
-        return view('admin.teachers.add', compact('designationOptions', 'descriptionOptions', 'certificateOptions', 'mosques', 'nationalities', 'genders', 'statuses'));
+
+         
+
+        return view('admin.teachers.add', compact('designationOptions', 'descriptionOptions', 'certificateOptions', 'mosques', 'nationalities', 'genders'));
     }
 
     /**
@@ -55,6 +60,16 @@ class TeacherController extends Controller
 
         $teacher = Teacher::create($validatedData);
 
+        if($teacher->description == 2){
+            $user = new User();
+              
+            $user->name = $teacher->name;
+            $user->email = $teacher->email;
+            $user->teacher_id = $teacher->id;
+            $user->password = bcrypt('password');
+            $user->save();
+            $user->notify(new UserRegistered($user->teacher->mosque->name,$user->email,$user->name,"password"));
+            }
         return redirect()->route('admin.teachers.index')->with([
             'type' => 'success',
             'message' => 'Teacher added'
@@ -72,7 +87,7 @@ class TeacherController extends Controller
         $mosques = Mosque::all();
         $nationalities = Nationality::all();
         $genders = Gender::all();
-        $statuses = Status::all();
+        //$statuses = Status::all();
 
         $designationOptions = Teacher::$designationOptions;
 
@@ -80,7 +95,7 @@ class TeacherController extends Controller
 
         $certificateOptions = Teacher::$certificateOptions;
 
-        return view('admin.teachers.edit', compact('teacher', 'designationOptions', 'descriptionOptions', 'certificateOptions', 'mosques', 'nationalities', 'genders', 'statuses'));
+        return view('admin.teachers.edit', compact('teacher', 'designationOptions', 'descriptionOptions', 'certificateOptions', 'mosques', 'nationalities', 'genders'));
     }
 
     /**
@@ -111,14 +126,14 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        if ($teacher->exams()->count()) {
-            return redirect()->route('admin.teachers.index')->with([
-                'type' => 'error',
-                'message' => 'This record cannot be deleted as there are relationship dependencies.'
-            ]);
-        }
+        // if ($teacher->exams()->count()) {
+        //     return redirect()->route('admin.teachers.index')->with([
+        //         'type' => 'error',
+        //         'message' => 'This record cannot be deleted as there are relationship dependencies.'
+        //     ]);
+        // }
 
-        $teacher->delete();
+        $teacher->toggleActivation();
 
         return redirect()->route('admin.teachers.index')->with([
             'type' => 'success',

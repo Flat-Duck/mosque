@@ -85,14 +85,14 @@ class MosqueController extends Controller
      */
     public function destroy(Mosque $mosque)
     {
-        if ($mosque->rooms()->count() || $mosque->teachers()->count()) {
-            return redirect()->route('admin.mosques.index')->with([
-                'type' => 'error',
-                'message' => 'This record cannot be deleted as there are relationship dependencies.'
-            ]);
-        }
+        // if ($mosque->rooms()->count() || $mosque->teachers()->count()) {
+        //     return redirect()->route('admin.mosques.index')->with([
+        //         'type' => 'error',
+        //         'message' => 'This record cannot be deleted as there are relationship dependencies.'
+        //     ]);
+      //  }
 
-        $mosque->delete();
+        $mosque->toggleActivation();
 
         return redirect()->route('admin.mosques.index')->with([
             'type' => 'success',

@@ -51,7 +51,7 @@ class Teacher extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'date_birth', 'family_booklet_number', 'designation', 'description', 'date_designation', 'address', 'bank', 'branch', 'account', 'phone', 'email', 'certificate', 'date_certificate', 'certificate_place', 'national_number', 'mosque_id', 'nationality_id', 'gender_id', 'status_id'
+        'name', 'date_birth', 'family_booklet_number', 'designation', 'description', 'date_designation', 'address', 'bank', 'branch', 'account', 'phone', 'email', 'certificate', 'date_certificate', 'certificate_place', 'national_number', 'mosque_id', 'nationality_id', 'gender_id'//, 'status_id'
     ];
 
     /**
@@ -81,7 +81,7 @@ class Teacher extends Model
             'mosque_id' => 'required|numeric|exists:mosques,id',
             'nationality_id' => 'required|numeric|exists:nationalities,id',
             'gender_id' => 'required|numeric|exists:genders,id',
-            'status_id' => 'required|numeric|exists:statuses,id',
+          //  'status_id' => 'required|numeric|exists:statuses,id',
         ];
     }
 
@@ -139,13 +139,13 @@ class Teacher extends Model
         return $this->belongsTo('App\Gender');
     }
 
-    /**
-     * Get the status for the Teacher.
-     */
-    public function status()
-    {
-        return $this->belongsTo('App\Status');
-    }
+    // /**
+    //  * Get the status for the Teacher.
+    //  */
+    // public function status()
+    // {
+    //     return $this->belongsTo('App\Status');
+    // }
 
     /**
      * Get the exams for the Teacher.
@@ -154,6 +154,24 @@ class Teacher extends Model
     {
         return $this->hasMany('App\Exam');
     }
+    public function user()
+    {
+        return $this->hasOne('App\User', 'teacher_id', 'id');
+    }
+    
+        /**
+     * Get the teachers for the Mosque.
+     */
+    public function toggleActivation()
+    {
+         $this->active = !$this->active;
+         $this->save();
+         if (!is_null($this->user))
+         {
+              $this->user->toggleActivation();
+            }
+    }
+
 
     /**
      * Returns the paginated list of resources
@@ -162,6 +180,6 @@ class Teacher extends Model
      **/
     public static function getList()
     {
-        return static::with(['mosque', 'nationality', 'gender', 'status'])->paginate(10);
+        return static::with(['mosque', 'nationality', 'gender'])->paginate(10);
     }
 }

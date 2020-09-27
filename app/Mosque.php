@@ -48,6 +48,14 @@ class Mosque extends Model
     {
         return $this->hasMany('App\Teacher');
     }
+    /**
+     * Get the teachers for the Mosque.
+     */
+    public function toggleActivation()
+    {
+         $this->active = !$this->active;
+         $this->save();
+    }
 
     /**
      * Returns the paginated list of resources

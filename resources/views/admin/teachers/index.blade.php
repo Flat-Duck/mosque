@@ -1,10 +1,10 @@
 @extends('admin.layouts.app', ['page' => 'teacher'])
 
-@section('title', 'Teachers')
+@section('title', 'إداراة المعلمين')
 
 @section('content')
 <div class="x_title">
-    <h2>Teachers</h2>
+    <h2>إداراة المعلمين</h2>
 
     <a class="pull-right btn btn-primary"
         href="{{ route('admin.teachers.create') }}"
@@ -26,6 +26,7 @@
             <th>رقم كتيب العائلة</th>
             <th>طبيعة التكليف</th>
             <th>الجامع</th>
+            <th>الحالة</th>
             <th>العمليات</th>
         </tr>
 
@@ -37,6 +38,12 @@
                 <td>{{ $teacher->family_booklet_number }}</td>
                 <td>{{ $teacher->getDesignation() }}</td>
                 <td>{{ $teacher->mosque->name }}</td>
+                @if ($teacher->active)
+                <td><span class="badge bg-green"> غير موقوف</span></td>
+                
+                @else
+                <td><span class="badge bg-red">موقوف</span></td>
+                @endif
                 <td>
                     <a href="{{ route('admin.teachers.edit', ['teacher' => $teacher->id]) }}">
                         <i class="fa fa-pencil-square-o"></i>
@@ -50,14 +57,18 @@
                         @method('DELETE')
 
                         <a onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }">
-                            <i class="fa fa-trash-o"></i>
+                   @if ($teacher->active)
+                                        <i data-toggle="tooltip" title="ايقاف" class='fa fa-lock'></i>
+                                        @else
+                                        <i data-toggle="tooltip" title="تفعيل" class='fa fa-lock-open'></i>
+                                        @endif
                         </a>
                     </form>
                 </td>
             </tr>
         @empty
             <tr>
-                <td colspan="7">No records found</td>
+                <td colspan="7">لاتوجد سجلات</td>
             </tr>
         @endforelse
     </table>

@@ -29,8 +29,8 @@ $factory->define(App\Teacher::class, function (Faker $faker) {
         'gender_id' => function () {
             return factory(App\Gender::class)->create()->id;
         },
-        'status_id' => function () {
-            return factory(App\Status::class)->create()->id;
-        },
+        // 'status_id' => function () {
+        //     return factory(App\Status::class)->create()->id;
+        // },
     ];
 });

@@ -20,7 +20,7 @@ class StudentController extends Controller
     {
         $students = Student::getList();
 
-        return view('admin.students.index', compact('students'));
+        return view('mosque.students.index', compact('students'));
     }
 
     /**
@@ -35,7 +35,7 @@ class StudentController extends Controller
         $statuses = Status::all();
         $levels = Level::all();
 
-        return view('admin.students.add', compact('nationalities', 'genders', 'statuses', 'levels'));
+        return view('mosque.students.add', compact('nationalities', 'genders', 'statuses', 'levels'));
     }
 
     /**

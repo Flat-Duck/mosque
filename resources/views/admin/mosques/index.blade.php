@@ -18,19 +18,28 @@
 <br>
 
 <div class="box-body">
-    <table class="table table-bordered">
+    <table id="table" class="table table-bordered">
+      <thead>
         <tr>
             <th>#</th>
             <th>الإسم</th>
             <th>تاريخ الإنشاء</th>
+            <th>الحالة</th>
             <th>العمليات</th>
         </tr>
-
+</thead>
+<tbody>
         @forelse ($mosques as $mosque)
             <tr>
                 <td>{{ $mosque->id }}</td>
                 <td>{{ $mosque->name }}</td>
                 <td>{{ $mosque->date_construction }}</td>
+               @if ($mosque->active)
+               <td><span class="badge bg-green"> مفعل</span></td>
+              
+               @else
+               <td><span class="badge bg-red">غير مفعل</span></td> 
+               @endif 
                 <td>
                     <a href="{{ route('admin.mosques.edit', ['mosque' => $mosque->id]) }}">
                         <i class="fa fa-pencil-square-o"></i>
@@ -44,16 +53,17 @@
                         @method('DELETE')
 
                         <a onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }">
-                            <i class="fa fa-trash-o"></i>
+                            <i class="fa fa-trash"></i>
                         </a>
                     </form>
                 </td>
             </tr>
         @empty
             <tr>
-                <td colspan="4">No records found</td>
+                <td colspan="4">لاتوجد سجلات</td>
             </tr>
         @endforelse
+    </tbody>
     </table>
 </div>
 

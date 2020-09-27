@@ -18,6 +18,7 @@ class CreateMosquesTable extends Migration
             $table->string('name');
             $table->text('address');
             $table->date('date_construction');
+            $table->boolean("active")->default(true);
             $table->text('street');
             $table->timestamps();
             $table->softDeletes();

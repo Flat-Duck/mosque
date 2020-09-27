@@ -36,4 +36,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function teacher()
+    {
+        return $this->belongsTo("App\Teacher");
+    }
+     /**
+     * Get the teachers for the Mosque.
+     */
+    public function toggleActivation()
+    {
+         $this->active = !$this->active;
+         $this->save();
+    }
+    /**
+     * Returns the paginated list of resources
+     *
+     * @return \Illuminate\Pagination\Paginator
+     **/
+    public static function getList()
+    {
+        return static::with("teacher")->paginate(10);
+    }
 }
