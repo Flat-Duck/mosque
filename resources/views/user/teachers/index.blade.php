@@ -26,7 +26,7 @@
             <th>رقم كتيب العائلة</th>
             <th>طبيعة التكليف</th>
             <th>الجامع</th>
-            <th>العمليات</th>
+            {{-- <th>العمليات</th> --}}
         </tr>
 
         @forelse ($teachers as $teacher)
@@ -37,7 +37,7 @@
                 <td>{{ $teacher->family_booklet_number }}</td>
                 <td>{{ $teacher->getDesignation() }}</td>
                 <td>{{ $teacher->mosque->name }}</td>
-                <td>
+                {{-- <td>
                     <a href="{{ route('user.teachers.edit', ['teacher' => $teacher->id]) }}">
                         <i class="fa fa-pencil-square-o"></i>
                     </a>
@@ -53,7 +53,7 @@
                             <i class="fa fa-trash"></i>
                         </a>
                     </form>
-                </td>
+                </td> --}}
             </tr>
         @empty
             <tr>
