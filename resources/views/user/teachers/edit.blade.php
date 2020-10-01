@@ -272,7 +272,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="status-id">Status</label>
             <select class="form-control"
                 name="status_id"
@@ -287,7 +287,7 @@
                     </option>
                 @endforeach
             </select>
-        </div>
+        </div> --}}
     </div>
 
     <div class="box-footer">
