@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="x_title">
-    <h2>Teachers</h2>
+    <h2>قائمة المعلمين</h2>
 {{-- 
     <a class="pull-right btn btn-primary"
         href="{{ route('user.teachers.create') }}"
@@ -25,7 +25,7 @@
             <th>تاريخ الميلاد</th>
             <th>رقم كتيب العائلة</th>
             <th>طبيعة التكليف</th>
-            <th>الجامع</th>
+           
             {{-- <th>العمليات</th> --}}
         </tr>
 
@@ -36,7 +36,7 @@
                 <td>{{ $teacher->date_birth }}</td>
                 <td>{{ $teacher->family_booklet_number }}</td>
                 <td>{{ $teacher->getDesignation() }}</td>
-                <td>{{ $teacher->mosque->name }}</td>
+                {{-- <td>{{ $teacher->mosque->name }}</td> --}}
                 {{-- <td>
                     <a href="{{ route('user.teachers.edit', ['teacher' => $teacher->id]) }}">
                         <i class="fa fa-pencil-square-o"></i>

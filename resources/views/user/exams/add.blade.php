@@ -81,7 +81,7 @@
         </div>
 
         <div class="form-group">
-            <label for="student-id">Student</label>
+            <label for="student-id">الطالب</label>
             <select class="form-control"
                 name="student_id"
                 required
@@ -98,7 +98,7 @@
         </div>
 
         <div class="form-group">
-            <label for="teacher-id">Teacher</label>
+            <label for="teacher-id">المعلم</label>
             <select class="form-control"
                 name="teacher_id"
                 required

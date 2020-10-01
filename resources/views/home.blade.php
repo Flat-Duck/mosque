@@ -28,6 +28,6 @@
 
 @section('content')
 <p>
-    Admin Dashboard
+    لوحة التحكم
 </p>
 @endsection

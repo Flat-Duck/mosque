@@ -88,7 +88,7 @@
         </div>
 
         <div class="form-group">
-            <label for="notes">Notes</label>
+            <label for="notes">ملاحظات</label>
             <textarea class="form-control"
                 name="notes"
                 id="notes"
@@ -98,7 +98,7 @@
         </div>
 
         <div class="form-group">
-            <label for="passport">Passport</label>
+            <label for="passport">رقم جواز السفر</label>
             <input type="text"
                 class="form-control"
                 name="passport"
@@ -143,7 +143,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="status-id">Status</label>
             <select class="form-control"
                 name="status_id"
@@ -158,7 +158,7 @@
                     </option>
                 @endforeach
             </select>
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="level-id">المستوى</label>
