@@ -62,7 +62,7 @@ Route::name('admin.')->prefix('admin')->namespace('Admin')->group(function () {
     });
 });
 
-Route::name('user.')->prefix('mosque')->namespace('Admin')->group(function () {
+Route::name('user.')->prefix('user')->namespace('User')->group(function () {
     Route::namespace('Auth')->middleware('guest:web')->group(function () {
         // Login
         Route::get('/', 'LoginController@showLoginForm')->name('login');
@@ -112,5 +112,5 @@ Route::name('user.')->prefix('mosque')->namespace('Admin')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-     Route::get('/killer', 'LoginController@showLoginForm')->name('mosque.login');
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/killer', 'LoginController@showLoginForm')->name('mosque.login');

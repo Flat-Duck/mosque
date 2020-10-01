@@ -57,15 +57,16 @@ class UserRegistered extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('مرحبا ' . $this->name . ',')
+            ->subject('تسجيل حساب جديد')
+            ->greeting('مرحبا ' . $this->name . ',')
             ->line('انت ترى هذه الرسالة لانه تم تسجيلك في منظومة الاوفاف لادارة المساجد')
-            ->line('تم تسجيلك كمشرف على مسجد'.$this->mosque . ',')
-            ->line('بيانات تسجبل الدخول كالاتي :{0}', $this->password)
+            ->line($this->mosque . 'تم تسجيلك كمشرف على مسجد')
+            ->line($this->password. 'بيانات تسجبل الدخول كالاتي')
             ->line('البريد الالكتروني')
             ->line('كلمة المرور')
             ->line('ننصحك بتغيير كلمة المرور حال تسجيل دخولك الى الموقع')
            
-            ->action('إضغط هنا لتسجيل الدخول', route('mosque.login', [
+            ->action('إضغط هنا لتسجيل الدخول', route('user.login', [
                 'email' => $this->email,
                 'password' => $this->password
             ]))
