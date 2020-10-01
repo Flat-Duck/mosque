@@ -5,12 +5,12 @@
 @section('content')
 <div class="x_title">
     <h2>Teachers</h2>
-
+{{-- 
     <a class="pull-right btn btn-primary"
         href="{{ route('user.teachers.create') }}"
     >
         إضافة جديد
-    </a>
+    </a> --}}
 
     <div class="clearfix"></div>
 </div>
