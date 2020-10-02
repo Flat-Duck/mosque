@@ -6,11 +6,11 @@
 <div class="x_title">
     <h2>المشرفين</h2>
 
-    <a class="pull-right btn btn-primary"
+    {{-- <a class="pull-right btn btn-primary"
         href="{{ route('admin.users.create') }}"
     >
         إضافة جديد
-    </a>
+    </a> --}}
 
     <div class="clearfix"></div>
 </div>
@@ -18,7 +18,8 @@
 <br>
 
 <div class="box-body">
-    <table class="table table-bordered">
+    <table id="table" class="table table-bordered">
+      <thead>
         <tr>
             <th>#</th>
             <th>الإسم</th>
@@ -29,7 +30,8 @@
             <th>الحالة</th> 
             <th>العمليات</th>
         </tr>
-
+</thead>
+<tbody>
         @forelse ($users as $user)
             <tr>
                 <td>{{ $user->id }}</td>
@@ -69,6 +71,7 @@
                 <td colspan="7">لاتوجد سجلات</td>
             </tr>
         @endforelse
+        </tbody>
     </table>
 </div>
 

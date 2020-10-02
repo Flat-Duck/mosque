@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\User;
-
+use App\Teacher;
 use App\Course;
 use App\Level;
 use App\Http\Controllers\Controller;
@@ -28,8 +28,8 @@ class CourseController extends Controller
     public function create()
     {
         $levels = Level::all();
-
-        return view('user.courses.add', compact('levels'));
+        $teachers = Teacher::all();
+        return view('user.courses.add', compact('levels','teachers'));
     }
 
     /**
@@ -58,8 +58,8 @@ class CourseController extends Controller
     public function edit(Course $course)
     {
         $levels = Level::all();
-
-        return view('user.courses.edit', compact('course', 'levels'));
+$teachers = Teacher::all();
+        return view('user.courses.edit', compact('course', 'levels','teachers'));
     }
 
     /**

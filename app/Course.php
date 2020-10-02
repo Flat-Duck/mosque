@@ -15,7 +15,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'start_time', 'end_time', 'level_id'
+        'start_time', 'end_time', 'level_id','teacher_id'
     ];
 
     /**
@@ -26,6 +26,7 @@ class Course extends Model
     public static function validationRules()
     {
         return [
+            'teacher_id' => 'required|numeric|exists:teachers,id',
             'start_time' => 'required|date_format:H:i:s',
             'end_time' => 'required|date_format:H:i:s',
             'level_id' => 'required|numeric|exists:levels,id',

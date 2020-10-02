@@ -53,6 +53,6 @@ class Status extends Model
      **/
     public static function getList()
     {
-        return static::paginate(10);
+        return static::paginate(1000);
     }
 }

@@ -180,6 +180,6 @@ class Teacher extends Model
      **/
     public static function getList()
     {
-        return static::with(['mosque', 'nationality', 'gender'])->paginate(10);
+        return static::with(['mosque', 'nationality', 'gender'])->paginate(1000);
     }
 }

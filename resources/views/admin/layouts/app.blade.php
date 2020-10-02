@@ -10,7 +10,7 @@
 
     <link href="{{ mix('/css/admin/vendor.css') }}" rel="stylesheet">
     <link href="{{ mix('/css/admin/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/datatables.min.css" />
+    {{-- <link rel="stylesheet" type="text/css" href="/css/datatables.min.css" /> --}}
     
     
 

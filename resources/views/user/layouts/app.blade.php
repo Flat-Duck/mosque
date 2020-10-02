@@ -11,6 +11,8 @@
     <link href="{{ mix('/css/admin/vendor.css') }}" rel="stylesheet">
     <link href="{{ mix('/css/admin/app.css') }}" rel="stylesheet">
 
+    {{-- <link rel="stylesheet" type="text/css" href="/css/datatables.min.css" /> --}}
+
     {{-- You can put page wise internal css style in styles section --}}
     @stack('styles')
 </head>
@@ -199,14 +201,27 @@
 
     <script src="{{ mix('/js/admin/vendor.js') }}"></script>
     <script src="{{ mix('/js/admin/app.js') }}"></script>
-
+    
+    
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/datatables.min.js"></script>
+    
     @if (session('message'))
-        <script>
-            showNotice("{{ session('type') }}", "{{ session('message') }}");
-        </script>
+    <script>
+        showNotice("{{ session('type') }}", "{{ session('message') }}");
+    </script>
     @endif
-
+    <script>
+        $(document).ready(function () {
+                $('#table').DataTable();
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+            
+    </script>
+    
     {{-- You can put page wise javascript in scripts section --}}
     @stack('scripts')
-</body>
-</html>
+    
+    </body>
+    
+    </html>

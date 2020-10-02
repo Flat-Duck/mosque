@@ -18,7 +18,8 @@
 <br>
 
 <div class="box-body">
-    <table class="table table-bordered">
+   <table id="table" class="table table-bordered">
+        <thead>
         <tr>
             <th>#</th>
             <th>الرقم الوطني</th>
@@ -28,7 +29,8 @@
             <th>الجنسية</th>
             <th>العمليات</th>
         </tr>
-
+        </thead>
+        <tbody>
         @forelse ($students as $student)
             <tr>
                 <td>{{ $student->id }}</td>
@@ -60,6 +62,7 @@
                 <td colspan="7">لاتوجد سجلات</td>
             </tr>
         @endforelse
+        </tbody>
     </table>
 </div>
 

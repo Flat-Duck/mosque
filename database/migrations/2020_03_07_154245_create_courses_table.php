@@ -18,10 +18,12 @@ class CreateCoursesTable extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->integer('level_id')->unsigned()->index();
+            $table->integer('teacher_id')->nullable()->unsigned()->index();
             $table->timestamps();
             $table->softDeletes();
             
             $table->foreign('level_id')->references('id')->on('levels');
+            $table->foreign('teacher_id')->references('id')->on('teachers');
         });
     }
 

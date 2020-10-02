@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Mosque;
 use App\Student;
 use App\Nationality;
 use App\Gender;
@@ -34,8 +35,9 @@ class StudentController extends Controller
         $genders = Gender::all();
         $statuses = Status::all();
         $levels = Level::all();
+        $mosques = Mosque::all();
 
-        return view('user.students.add', compact('nationalities', 'genders', 'statuses', 'levels'));
+        return view('user.students.add', compact('nationalities', 'genders', 'statuses', 'levels','mosques'));
     }
 
     /**
@@ -67,8 +69,9 @@ class StudentController extends Controller
         $genders = Gender::all();
         $statuses = Status::all();
         $levels = Level::all();
+        $mosques = Mosque::all();
 
-        return view('user.students.edit', compact('student', 'nationalities', 'genders', 'statuses', 'levels'));
+        return view('user.students.edit', compact('student', 'nationalities', 'genders', 'statuses', 'levels','mosques'));
     }
 
     /**

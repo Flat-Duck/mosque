@@ -38,7 +38,33 @@
                 id="name"
             >
         </div>
-
+        <div class="form-group">
+            <label for="date_join">تاريخ الإلتحاق</label>
+            <input type="date"
+                class="form-control"
+                name="date_join"
+                required
+                placeholder="تاريخ الإلتحاق"
+                value="{{ old('date_join',$student->date_join) }}"
+                id="date_join"
+            >
+        </div>
+        <div class="form-group">
+            <label for="mosque-id">الجامع</label>
+            <select class="form-control"
+                name="mosque_id"
+                required
+                id="mosque-id"
+            >
+                @foreach ($mosques as $mosque)
+                    <option value="{{ $mosque->id }}"
+                        {{ old('mosque_id',$student->mosque_id) == $mosque->id ? 'selected' : '' }}
+                    >
+                        {{ $mosque->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
         <div class="form-group">
             <label for="date_birth">تاريخ الميلاد</label>
             <input type="date"
@@ -141,8 +167,8 @@
             </select>
         </div>
 
-        {{-- <div class="form-group">
-            <label for="status-id">Status</label>
+        <div class="form-group">
+            <label for="status-id">الحالة</label>
             <select class="form-control"
                 name="status_id"
                 required
@@ -156,7 +182,7 @@
                     </option>
                 @endforeach
             </select>
-        </div> --}}
+        </div>
 
         <div class="form-group">
             <label for="level-id">المستوى</label>

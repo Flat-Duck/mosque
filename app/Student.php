@@ -15,7 +15,7 @@ class Student extends Model
      * @var array
      */
     protected $fillable = [
-        'national_number', 'name', 'date_birth', 'address', 'phone', 'qualification', 'notes', 'passport', 'nationality_id', 'gender_id', 'status_id', 'level_id'
+        'national_number', 'name','enrolment_number','date_join', 'date_birth', 'address', 'phone', 'qualification', 'notes', 'passport', 'nationality_id', 'gender_id', 'status_id', 'level_id','mosque_id'
     ];
 
     /**
@@ -28,7 +28,9 @@ class Student extends Model
         return [
             'national_number' => 'required|numeric',
             'name' => 'required|string',
+            'enrolment_number' => 'required|numeric',
             'date_birth' => 'required|date',
+            'date_join' => 'required|date',
             'address' => 'required|string',
             'phone' => 'required|string',
             'qualification' => 'required|string',
@@ -37,7 +39,8 @@ class Student extends Model
             'nationality_id' => 'required|numeric|exists:nationalities,id',
             'gender_id' => 'required|numeric|exists:genders,id',
             'status_id' => 'required|numeric|exists:statuses,id',
-            'level_id' => 'required|numeric|exists:levels,id',
+            'level_id' => 'numeric|exists:levels,id',
+            'mosque_id' => 'required|numeric|exists:mosques,id',
         ];
     }
 

@@ -12,7 +12,16 @@
 <form role="form" method="POST" action="{{ route('user.courses.update', ['course' => $course->id]) }}">
     @csrf
     @method('PUT')
-
+<div class="form-group">
+    <label for="teacher-id">المعلم</label>
+    <select class="form-control" name="teacher_id" required id="teacher-id">
+        @foreach ($teachers as $teacher)
+        <option value="{{ $teacher->id }}" {{ old('teacher_id', $course->teacher_id) == $teacher->id ? 'selected' : '' }}>
+            {{ $teacher->name }}
+        </option>
+        @endforeach
+    </select>
+</div>
     <div class="box-body">
         <div class="form-group">
             <label for="start_time">توقيت البداية</label>
