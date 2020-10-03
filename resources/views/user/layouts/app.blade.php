@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="profile_info">
-                            <span>Welcome,</span>
+                            <span>مرحبا,</span>
                             <h2>{{ Auth::guard('web')->user()->name }}</h2>
                         </div>
                     </div>
@@ -45,13 +45,13 @@
                     {{-- Sidebar Menu --}}
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
-                            <h3>Menu</h3>
+                            <h3>القائمة</h3>
 
                             <ul class="nav side-menu">
                                 <li {{ $page == 'dashboard' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.dashboard') }}">
                                         <i class="fa fa-home"></i>
-                                        Dashboard
+                                        لوحة التحكم
                                     </a>
                                 </li>
 
@@ -65,37 +65,37 @@
                                 <li {{ $page == 'room' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.rooms.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>Rooms</span>
+                                        <span>القاعات</span>
                                     </a>
                                 </li>
 
                                 <li {{ $page == 'student' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.students.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>Students</span>
+                                        <span>الطلبة</span>
                                     </a>
                                 </li>
 
                                 <li {{ $page == 'teacher' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.teachers.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>Teachers</span>
+                                        <span>المعلمين</span>
                                     </a>
                                 </li>
 
                                 <li {{ $page == 'course' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.courses.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>Courses</span>
+                                        <span>الدورات</span>
                                     </a>
                                 </li>
-
+{{-- 
                                 <li {{ $page == 'nationality' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.nationalities.index') }}">
                                         <i class="fa fa-arrow-right"></i>
                                         <span>Nationalities</span>
                                     </a>
-                                </li>
+                                </li> --}}
 
                                 {{-- <li {{ $page == 'gender' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.genders.index') }}">
@@ -114,7 +114,7 @@
                                 <li {{ $page == 'exam' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.exams.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>Exams</span>
+                                        <span>الامتحانات</span>
                                     </a>
                                 </li>
 
@@ -153,14 +153,14 @@
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li>
                                         <a href="{{ route('user.profile') }}">
-                                            Profile
+                                            الملف الشخصي
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="{{ route('user.logout') }}">
                                             <i class="fa fa-sign-out pull-right"></i>
-                                            Log Out
+                                            تسجيل الخروج
                                         </a>
                                     </li>
                                 </ul>
@@ -205,6 +205,9 @@
     
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/datatables.min.js"></script>
+    <script type="text/javascript" src="/js/inputmask.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.inputmask.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/inputmask.min.js"></script>
     
     @if (session('message'))
     <script>
@@ -220,7 +223,7 @@
     </script>
     
     {{-- You can put page wise javascript in scripts section --}}
-    @stack('scripts')
+    @yield('scripts')
     
     </body>
     

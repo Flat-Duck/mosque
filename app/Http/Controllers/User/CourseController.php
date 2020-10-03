@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 use App\Teacher;
 use App\Course;
 use App\Level;
+use App\Room;
+
 use App\Http\Controllers\Controller;
 
 class CourseController extends Controller
@@ -29,7 +31,8 @@ class CourseController extends Controller
     {
         $levels = Level::all();
         $teachers = Teacher::all();
-        return view('user.courses.add', compact('levels','teachers'));
+        $rooms = Room::all();
+        return view('user.courses.add', compact('levels','teachers','rooms'));
     }
 
     /**
@@ -58,7 +61,7 @@ class CourseController extends Controller
     public function edit(Course $course)
     {
         $levels = Level::all();
-$teachers = Teacher::all();
+        $teachers = Teacher::all();
         return view('user.courses.edit', compact('course', 'levels','teachers'));
     }
 
@@ -90,7 +93,9 @@ $teachers = Teacher::all();
      */
     public function destroy(Course $course)
     {
-        $course->delete();
+        // $course->delete();
+
+          $course->toggleActivation();
 
         return redirect()->route('user.courses.index')->with([
             'type' => 'success',

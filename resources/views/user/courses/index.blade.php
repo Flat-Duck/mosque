@@ -23,7 +23,10 @@
             <th>#</th>
             <th>توقيت البداية</th>
             <th>توقيت النهاية</th>
+            <th>المعلم</th>
             <th>المستوى</th>
+            <th>السنة</th>
+            <th>الحالة</th>
             <th>العمليات</th>
         </tr>
 
@@ -32,21 +35,31 @@
                 <td>{{ $course->id }}</td>
                 <td>{{ $course->start_time }}</td>
                 <td>{{ $course->end_time }}</td>
+                <td>{{ $course->teacher->name }}</td>
                 <td>{{ $course->level->name }}</td>
+                <td>{{ $course->year }}</td>
+                @if ($course->active)
+                <td><span class="badge bg-green"> غير موقوفة</span></td>
+
+                @else
+                <td><span class="badge bg-red">موقوفة</span></td>
+                @endif
+
                 <td>
                     <a href="{{ route('user.courses.edit', ['course' => $course->id]) }}">
                         <i class="fa fa-pencil-square-o"></i>
                     </a>
-
-                    <form action="{{ route('user.courses.destroy', ['course' => $course->id]) }}"
-                        method="POST"
-                        class="inline pointer"
-                    >
+                
+                    <form action="{{ route('user.courses.destroy', ['course' => $course->id]) }}" method="POST" class="inline pointer">
                         @csrf
                         @method('DELETE')
-
+                
                         <a onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }">
-                            <i class="fa fa-trash"></i>
+                            @if ($course->active)
+                            <i data-toggle="tooltip" title="ايقاف" class='fa fa-lock'></i>
+                            @else
+                            <i data-toggle="tooltip" title="تفعيل" class='fa fa-lock-open'></i>
+                            @endif
                         </a>
                     </form>
                 </td>

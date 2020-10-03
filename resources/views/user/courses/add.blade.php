@@ -24,6 +24,30 @@
         @endforeach
     </select>
 </div>
+<div class="form-group">
+    <label for="room-id">القاعة</label>
+    <select class="form-control" name="room_id" required id="room-id">
+        @foreach ($rooms as $room)
+        <option value="{{ $room->id }}" {{ old('room_id') == $room->id ? 'selected' : '' }}>
+            {{ $room->name }}
+        </option>
+        @endforeach
+    </select>
+</div>
+
+    <div class="box-body">
+        <div class="form-group">
+            <label for="year">لسنة </label>
+            <input type="text"
+                class="form-control"
+                name="year"
+                required
+                placeholder="توقيت البداية"
+                value="{{ old('year') }}"
+                step="2"
+                id="year"
+            >
+        </div>
     <div class="box-body">
         <div class="form-group">
             <label for="start_time">توقيت البداية</label>
@@ -77,4 +101,16 @@
         </a>
     </div>
 </form>
+
+@endsection
+@section('scripts')
+<script>
+    console.log(navigator.userAgent);
+    $("#year").inputmask("datetime", {
+        inputFormat: "yyyy-yyyy",
+        outputFormat: "yyyy-yyyy",
+        inputEventOnly: true
+    });
+  
+</script>
 @endsection
