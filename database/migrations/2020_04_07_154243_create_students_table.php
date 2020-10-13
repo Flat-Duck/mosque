@@ -28,7 +28,7 @@ class CreateStudentsTable extends Migration
             $table->integer('nationality_id')->unsigned()->index();
             $table->integer('gender_id')->unsigned()->index();
             $table->integer('status_id')->unsigned()->index();
-            $table->integer('level_id')->unsigned()->index();
+          //  $table->integer('level_id')->unsigned()->index();
             $table->integer('mosque_id')->unsigned()->index();
             $table->integer('course_id')->unsigned()->index();
             $table->timestamps();
@@ -37,7 +37,7 @@ class CreateStudentsTable extends Migration
             $table->foreign('nationality_id')->references('id')->on('nationalities');
             $table->foreign('gender_id')->references('id')->on('genders');
             $table->foreign('status_id')->references('id')->on('statuses');
-            $table->foreign('level_id')->references('id')->on('levels');
+          //  $table->foreign('level_id')->references('id')->on('levels');
             $table->foreign('mosque_id')->references('id')->on('mosques');
             $table->foreign('course_id')->references('id')->on('courses');
         });

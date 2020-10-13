@@ -6,12 +6,9 @@
 
 <div class="x_title">
     <h2>إضافة طالب جديد</h2>
-
     <div class="clearfix"></div>
 </div>
-
 <br>
-
 <form role="form" method="POST" action="{{ route('user.students.store') }}">
     @csrf
 
@@ -200,7 +197,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="level-id">المستوى</label>
             <select class="form-control"
                 name="level_id"
@@ -215,8 +212,7 @@
                     </option>
                 @endforeach
             </select>
-        </div>
-    </div>
+        </div> --}}
        <div class="form-group">
             <label for="course-id">الدورة</label>
             <select class="form-control"
