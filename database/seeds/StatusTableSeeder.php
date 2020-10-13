@@ -11,6 +11,15 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Status::class, 5)->create();
+        // factory(App\Status::class, 5)->create();
+          factory(App\Status::class)->create([
+            'name' => 'مستجد'
+        ]);
+          factory(App\Status::class)->create([
+            'name' => 'موقوف'
+        ]);
+          factory(App\Status::class)->create([
+            'name' => 'نظامي'
+        ]);
     }
 }
