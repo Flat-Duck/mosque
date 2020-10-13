@@ -11,19 +11,19 @@ class NationalityTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Level::class)->create([
+        factory(App\Nationality::class)->create([
             'name' => 'ليبيا'
         ]);
-        factory(App\Level::class)->create([
+        factory(App\Nationality::class)->create([
             'name' => 'تونس'
         ]);
-        factory(App\Level::class)->create([
+        factory(App\Nationality::class)->create([
             'name' => 'مصر'
         ]);
-        factory(App\Level::class)->create([
+        factory(App\Nationality::class)->create([
             'name' => 'المغرب'
         ]);
-        factory(App\Level::class)->create([
+        factory(App\Nationality::class)->create([
             'name' => 'الجزائر'
         ]);
     }
