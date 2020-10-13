@@ -45,7 +45,7 @@
             <input type="number"
                 class="form-control"
                 name="family_booklet_number"
-                required
+                
                 placeholder="رقم كتيب العائلة"
                 value="{{ old('family_booklet_number') }}"
                 step="any"
