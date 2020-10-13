@@ -31,7 +31,7 @@
                 <td>{{ $status->name }}</td>
                 <td>
                     <a href="{{ route('user.statuses.edit', ['status' => $status->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
 
                     <form action="{{ route('user.statuses.destroy', ['status' => $status->id]) }}"

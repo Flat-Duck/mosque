@@ -42,7 +42,7 @@
                @endif 
                 <td>
                     <a href="{{ route('admin.mosques.edit', ['mosque' => $mosque->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
 
                     <form action="{{ route('admin.mosques.destroy', ['mosque' => $mosque->id]) }}"

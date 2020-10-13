@@ -41,7 +41,7 @@
                 <td>{{ $student->nationality->name }}</td>
                 <td>
                     <a href="{{ route('user.students.edit', ['student' => $student->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
 
                     {{-- <form action="{{ route('user.students.destroy', ['student' => $student->id]) }}"

@@ -48,7 +48,7 @@
                 @endif
                 <td>
                     <a href="{{ route('admin.teachers.edit', ['teacher' => $teacher->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
 
                     <form action="{{ route('admin.teachers.destroy', ['teacher' => $teacher->id]) }}"

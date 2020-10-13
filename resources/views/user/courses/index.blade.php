@@ -47,7 +47,7 @@
 
                 <td>
                     <a href="{{ route('user.courses.edit', ['course' => $course->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
                 
                     <form action="{{ route('user.courses.destroy', ['course' => $course->id]) }}" method="POST" class="inline pointer">

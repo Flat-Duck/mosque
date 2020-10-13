@@ -37,7 +37,7 @@
                 <td>{{ $room->mosque->name }}</td>
                 <td>
                     <a href="{{ route('user.rooms.edit', ['room' => $room->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
 
                     {{-- <form action="{{ route('user.rooms.destroy', ['room' => $room->id]) }}"

@@ -31,7 +31,7 @@
                 <td>{{ $nationality->name }}</td>
                 <td>
                     <a href="{{ route('admin.nationalities.edit', ['nationality' => $nationality->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
 
                     <form action="{{ route('admin.nationalities.destroy', ['nationality' => $nationality->id]) }}"

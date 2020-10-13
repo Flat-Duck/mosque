@@ -31,7 +31,7 @@
                 <td>{{ $gender->name }}</td>
                 <td>
                     <a href="{{ route('user.genders.edit', ['gender' => $gender->id]) }}">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i  style="color: orange;" class="fa fa-pencil-square-o"></i>
                     </a>
 
                     <form action="{{ route('user.genders.destroy', ['gender' => $gender->id]) }}"
