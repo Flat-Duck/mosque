@@ -18,9 +18,9 @@ $factory->define(App\Student::class, function (Faker $faker) {
         'status_id' => function () {
             return factory(App\Status::class)->create()->id;
         },
-        'level_id' => function () {
-            return 1;
-        },
+        // 'level_id' => function () {
+        //     return 1;
+        // },
         'mosque_id' => function () {
             return factory(App\Mosque::class)->create()->id;
         },
