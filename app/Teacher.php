@@ -38,12 +38,14 @@ class Teacher extends Model
      * @var array
      */
     public static $certificateOptions = [
-        1 => 'Certificate option 1',
-        2 => 'Certificate option 2',
-        3 => 'Certificate option 3',
+        1 => 'كامل القران',
+        2 => 'نصف القران',
+        3 => 'ربع القران',
         4 => 'Certificate option 4',
         5 => 'Certificate option 5',
     ];
+
+
 
     /**
      * The attributes that are mass assignable.

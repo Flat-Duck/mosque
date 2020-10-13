@@ -75,6 +75,24 @@
                                         <span>إدارة المستخدمين </span>
                                     </a>
                                 </li>
+                               <li class=""><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu" style="display: none;">
+                                    <li><a href="#level1_1">Level One</a>
+                                    </li>
+                                    <li class=""><a>Level One<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none;">
+                                            <li class="sub_menu"><a href="level2.html">Level Two</a>
+                                            </li>
+                                            <li><a href="#level2_1">Level Two</a>
+                                            </li>
+                                            <li><a href="#level2_2">Level Two</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#level1_2">Level One</a>
+                                    </li>
+                                </ul>
+                            </li>
                             </ul>
                         </div>
                     </div>

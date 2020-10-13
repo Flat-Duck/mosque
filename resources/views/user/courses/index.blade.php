@@ -56,9 +56,9 @@
                 
                         <a onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }">
                             @if ($course->active)
-                            <i data-toggle="tooltip" title="ايقاف" class='fa fa-lock'></i>
+                            <i style="color: red;"  data-toggle="tooltip" title="ايقاف" class='fa fa-lock'></i>
                             @else
-                            <i data-toggle="tooltip" title="تفعيل" class='fa fa-lock-open'></i>
+                            <i style="color: green;"  data-toggle="tooltip" title="تفعيل" class='fa fa-lock-open'></i>
                             @endif
                         </a>
                     </form>
