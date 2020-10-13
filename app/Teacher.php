@@ -66,7 +66,7 @@ class Teacher extends Model
         return [
             'name' => 'required|string',
             'date_birth' => 'required|date',
-            'family_booklet_number' => 'required|numeric',
+            'family_booklet_number' => 'numeric',
             'designation' => 'required|numeric',
             'description' => 'required|numeric',
             'date_designation' => 'required|date',
