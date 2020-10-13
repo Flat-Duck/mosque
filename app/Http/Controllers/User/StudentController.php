@@ -8,6 +8,7 @@ use App\Nationality;
 use App\Gender;
 use App\Status;
 use App\Level;
+use App\Course;
 use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
@@ -36,8 +37,9 @@ class StudentController extends Controller
         $statuses = Status::all();
         $levels = Level::all();
         $mosques = Mosque::all();
+        $courses = Course::all();
 
-        return view('user.students.add', compact('nationalities', 'genders', 'statuses', 'levels','mosques'));
+        return view('user.students.add', compact('nationalities', 'genders', 'statuses', 'levels','mosques','courses'));
     }
 
     /**

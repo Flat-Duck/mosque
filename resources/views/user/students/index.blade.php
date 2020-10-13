@@ -44,7 +44,7 @@
                         <i class="fa fa-pencil-square-o"></i>
                     </a>
 
-                    <form action="{{ route('user.students.destroy', ['student' => $student->id]) }}"
+                    {{-- <form action="{{ route('user.students.destroy', ['student' => $student->id]) }}"
                         method="POST"
                         class="inline pointer"
                     >
@@ -54,7 +54,7 @@
                         <a onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }">
                             <i class="fa fa-trash"></i>
                         </a>
-                    </form>
+                    </form> --}}
                 </td>
             </tr>
         @empty

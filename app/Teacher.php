@@ -77,7 +77,7 @@ class Teacher extends Model
             'certificate' => 'required|numeric',
             'date_certificate' => 'required|date',
             'certificate_place' => 'required|string',
-            'national_number' => 'required|numeric',
+            'national_number' => 'numeric',
             'mosque_id' => 'required|numeric|exists:mosques,id',
             'nationality_id' => 'required|numeric|exists:nationalities,id',
             'gender_id' => 'required|numeric|exists:genders,id',

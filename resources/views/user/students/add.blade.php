@@ -200,22 +200,22 @@
             </select>
         </div>
 
-        {{-- <div class="form-group">
-            <label for="level-id">المستوى</label>
+        <div class="form-group">
+            <label for="course-id">الدورة</label>
             <select class="form-control"
-                name="level_id"
+                name="course_id"
                 required
-                id="level-id"
+                id="course-id"
             >
-                @foreach ($levels as $level)
-                    <option value="{{ $level->id }}"
-                        {{ old('level_id') == $level->id ? 'selected' : '' }}
+                @foreach ($courses as $course)
+                    <option value="{{ $course->id }}"
+                        {{ old('course_id') == $course->id ? 'selected' : '' }}
                     >
-                        {{ $level->name }}
+                        {{ $course->name }}
                     </option>
                 @endforeach
             </select>
-        </div> --}}
+        </div>
     </div>
 
     <div class="box-footer">

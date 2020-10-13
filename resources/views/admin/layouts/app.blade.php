@@ -72,7 +72,7 @@
                                 <li {{ $page == 'user' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.users.index') }}">
                                         <i class="fa fa-lock"></i>
-                                        <span>إدارة حسابات المشرفين</span>
+                                        <span>إدارة المستخدمين </span>
                                     </a>
                                 </li>
                             </ul>

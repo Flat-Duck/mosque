@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="x_title">
-    <h2>المشرفين</h2>
+    <h2>المستخدمين</h2>
 
     {{-- <a class="pull-right btn btn-primary"
         href="{{ route('admin.users.create') }}"
