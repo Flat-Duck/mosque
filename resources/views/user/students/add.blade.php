@@ -201,6 +201,23 @@
         </div>
 
         <div class="form-group">
+            <label for="level-id">المستوى</label>
+            <select class="form-control"
+                name="level_id"
+                required
+                id="level-id"
+            >
+                @foreach ($levels as $level)
+                    <option value="{{ $level->id }}"
+                        {{ old('level_id') == $level->id ? 'selected' : '' }}
+                    >
+                        {{ $level->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+       <div class="form-group">
             <label for="course-id">الدورة</label>
             <select class="form-control"
                 name="course_id"
