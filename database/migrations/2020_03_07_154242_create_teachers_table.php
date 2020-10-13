@@ -31,7 +31,7 @@ class CreateTeachersTable extends Migration
             $table->integer('certificate');
             $table->date('date_certificate');
             $table->string('certificate_place');
-            $table->integer('national_number');
+            $table->bigInteger('national_number');
             $table->integer('mosque_id')->unsigned()->index();
             $table->integer('nationality_id')->unsigned()->index();
             $table->integer('gender_id')->unsigned()->index();
