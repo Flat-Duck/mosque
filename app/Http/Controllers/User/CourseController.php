@@ -62,7 +62,8 @@ class CourseController extends Controller
     {
         $levels = Level::all();
         $teachers = Teacher::all();
-        return view('user.courses.edit', compact('course', 'levels','teachers'));
+        $rooms = Room::all();
+        return view('user.courses.edit', compact('course', 'levels','teachers','rooms'));
     }
 
     /**

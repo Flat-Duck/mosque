@@ -26,6 +26,19 @@
                 id="national_number"
             >
         </div>
+<input type="hidden" name="enrolment_number" value="{{ old('enrolment_number', $student->enrolment_number) }}">
+        <div class="form-group">
+            <label for="enrolment_number">رقم القيد</label>
+            <input  type="number"
+                class="form-control"
+                name="enrolment_number1"
+                required
+                placeholder="رقم القيد"
+                value="{{ old('enrolment_number', $student->enrolment_number) }}"
+                step="any"
+                id="enrolment_number"
+            >
+        </div>
 
         <div class="form-group">
             <label for="name">الإسم</label>
@@ -203,10 +216,10 @@
     </div>
 
     <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">تعديل</button>
 
         <a href="{{ route('user.students.index') }}" class="btn btn-default">
-            Cancel
+            إلغاء
         </a>
     </div>
 </form>

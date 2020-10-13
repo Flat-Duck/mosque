@@ -22,7 +22,13 @@ $factory->define(App\Student::class, function (Faker $faker) {
             return factory(App\Status::class)->create()->id;
         },
         'level_id' => function () {
-            return factory(App\Level::class)->create()->id;
+            return 1;
+        },
+        'mosque_id' => function () {
+            return factory(App\Mosque::class)->create()->id;
+        },
+        'course_id' => function () {
+            return factory(App\Course::class)->create()->id;
         },
     ];
 });

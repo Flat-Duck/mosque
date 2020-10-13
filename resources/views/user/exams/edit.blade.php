@@ -131,10 +131,10 @@
     </div>
 
     <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">تعديل</button>
 
         <a href="{{ route('user.exams.index') }}" class="btn btn-default">
-            Cancel
+            إلغاء
         </a>
     </div>
 </form>

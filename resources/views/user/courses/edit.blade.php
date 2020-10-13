@@ -1,10 +1,10 @@
 @extends('user.layouts.app', ['page' => 'course'])
 
-@section('title', 'Edit Course')
+@section('title', 'تعديل الدورة')
 
 @section('content')
 <div class="x_title">
-    <h2>Edit Course</h2>
+    <h2>تعديل الدورة</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -18,6 +18,16 @@
         @foreach ($teachers as $teacher)
         <option value="{{ $teacher->id }}" {{ old('teacher_id', $course->teacher_id) == $teacher->id ? 'selected' : '' }}>
             {{ $teacher->name }}
+        </option>
+        @endforeach
+    </select>
+</div>
+<div class="form-group">
+    <label for="room-id">الفصل</label>
+    <select class="form-control" name="room_id" required id="room-id">
+        @foreach ($rooms as $room)
+        <option value="{{ $room->id }}" {{ old('room_id', $course->room_id) == $room->id? 'selected' : '' }}>
+            {{ $room->name }}
         </option>
         @endforeach
     </select>
@@ -68,10 +78,10 @@
     </div>
 
     <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">تعديل</button>
 
         <a href="{{ route('user.courses.index') }}" class="btn btn-default">
-            Cancel
+            إلغاء
         </a>
     </div>
 </form>

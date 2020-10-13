@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="x_title">
-            <h2>Update Profile</h2>
+            <h2>تعديل Profile</h2>
             <div class="clearfix"></div>
         </div>
 
@@ -49,7 +49,7 @@
             </div>
 
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Update Profile</button>
+                <button type="submit" class="btn btn-primary">تعديل Profile</button>
             </div>
         </form>
     </div>

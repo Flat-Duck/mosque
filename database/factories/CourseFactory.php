@@ -7,7 +7,10 @@ $factory->define(App\Course::class, function (Faker $faker) {
         'start_time' => $faker->time(),
         'end_time' => $faker->time(),
         'level_id' => function () {
-            return factory(App\Level::class)->create()->id;
+            return 1;
+        },
+        'teacher_id' => function () {
+            return factory(App\Teacher::class)->create()->id;
         },
     ];
 });

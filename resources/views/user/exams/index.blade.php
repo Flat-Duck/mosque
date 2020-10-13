@@ -1,10 +1,10 @@
 @extends('user.layouts.app', ['page' => 'exam'])
 
-@section('title', 'Exams')
+@section('title', 'الامتحانات')
 
 @section('content')
 <div class="x_title">
-    <h2>Exams</h2>
+    <h2>الامتحانات</h2>
 
     <a class="pull-right btn btn-primary"
         href="{{ route('user.exams.create') }}"
@@ -42,7 +42,7 @@
                         <i class="fa fa-pencil-square-o"></i>
                     </a>
 
-                    <form action="{{ route('user.exams.destroy', ['exam' => $exam->id]) }}"
+                    {{-- <form action="{{ route('user.exams.destroy', ['exam' => $exam->id]) }}"
                         method="POST"
                         class="inline pointer"
                     >
@@ -52,7 +52,7 @@
                         <a onclick="if (confirm('Are you sure?')) { this.parentNode.submit() }">
                             <i class="fa fa-trash"></i>
                         </a>
-                    </form>
+                    </form> --}}
                 </td>
             </tr>
         @empty

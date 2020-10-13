@@ -1,10 +1,10 @@
 @extends('user.layouts.app', ['page' => 'course'])
 
-@section('title', 'Courses')
+@section('title', 'الدورات')
 
 @section('content')
 <div class="x_title">
-    <h2>Courses</h2>
+    <h2>الدورات</h2>
 
     <a class="pull-right btn btn-primary"
         href="{{ route('user.courses.create') }}"

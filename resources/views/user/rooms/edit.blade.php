@@ -1,10 +1,10 @@
 @extends('user.layouts.app', ['page' => 'room'])
 
-@section('title', 'تعديل القاعة')
+@section('title', 'تعديل الفصل')
 
 @section('content')
 <div class="x_title">
-    <h2>تعديل القاعة</h2>
+    <h2>تعديل الفصل</h2>
 
     <div class="clearfix"></div>
 </div>
@@ -75,10 +75,10 @@
     </div>
 
     <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">تعديل</button>
 
         <a href="{{ route('user.rooms.index') }}" class="btn btn-default">
-            Cancel
+            إلغاء
         </a>
     </div>
 </form>

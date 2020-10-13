@@ -16,7 +16,7 @@ $factory->define(App\Exam::class, function (Faker $faker) {
             return factory(App\Teacher::class)->create()->id;
         },
         'level_id' => function () {
-            return factory(App\Level::class)->create()->id;
+            return 1;
         },
     ];
 });

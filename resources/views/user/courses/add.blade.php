@@ -25,7 +25,7 @@
     </select>
 </div>
 <div class="form-group">
-    <label for="room-id">القاعة</label>
+    <label for="room-id">الفصل</label>
     <select class="form-control" name="room_id" required id="room-id">
         @foreach ($rooms as $room)
         <option value="{{ $room->id }}" {{ old('room_id') == $room->id ? 'selected' : '' }}>
@@ -94,10 +94,10 @@
     </div>
 
     <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">حفظ</button>
 
         <a href="{{ route('user.courses.index') }}" class="btn btn-default">
-            Cancel
+            إلغاء
         </a>
     </div>
 </form>

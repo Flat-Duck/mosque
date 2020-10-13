@@ -65,7 +65,7 @@
                                 <li {{ $page == 'room' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.rooms.index') }}">
                                         <i class="fa fa-arrow-right"></i>
-                                        <span>القاعات</span>
+                                        <span>الفصول</span>
                                     </a>
                                 </li>
 

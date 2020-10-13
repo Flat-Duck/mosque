@@ -84,6 +84,14 @@ class Student extends Model
         return $this->belongsTo('App\Level');
     }
 
+        /**
+     * Get the level for the Student.
+     */
+    public function mosque()
+    {
+        return $this->belongsTo('App\Mosque');
+    }
+
     /**
      * Returns the paginated list of resources
      *

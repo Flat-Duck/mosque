@@ -30,10 +30,10 @@
     </div>
 
     <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">حفظ</button>
 
         <a href="{{ route('user.statuses.index') }}" class="btn btn-default">
-            Cancel
+            إلغاء
         </a>
     </div>
 </form>

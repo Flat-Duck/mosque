@@ -112,5 +112,12 @@ Route::name('user.')->prefix('user')->namespace('User')->group(function () {
 
 Auth::routes();
 
+ Route::get('/result', 'ResultController@showForm')->name('result');
+ Route::post('/result', 'ResultController@calRes')->name('result');
+ Route::get('/', function ()
+ {
+    return view('welcome');
+ });
+
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/killer', 'LoginController@showLoginForm')->name('mosque.login');
