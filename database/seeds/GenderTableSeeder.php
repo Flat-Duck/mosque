@@ -11,6 +11,12 @@ class GenderTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Gender::class, 5)->create();
+       
+        factory(App\Level::class)->create([
+            'name' => 'ذكر'
+        ]);
+        factory(App\Level::class)->create([
+            'name' => 'أنثى'
+        ]);
     }
 }
