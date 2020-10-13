@@ -13,7 +13,7 @@ $factory->define(App\Student::class, function (Faker $faker) {
         'notes' => $faker->paragraph(),
         'passport' => $faker->name(),
 
-        'nationality_id' => $faker->numberBetween(1, 5),
+        'nationality_id' => $faker->numberBetween(2, 4),
         'gender_id' => $faker->numberBetween(1, 2),
         'status_id' => function () {
             return factory(App\Status::class)->create()->id;

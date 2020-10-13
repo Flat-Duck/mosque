@@ -23,7 +23,7 @@ $factory->define(App\Teacher::class, function (Faker $faker) {
         'mosque_id' => function () {
             return factory(App\Mosque::class)->create()->id;
         },
-        'nationality_id' => $faker->numberBetween(1, 5),
+        'nationality_id' => $faker->numberBetween(2, 4),
         'gender_id' => $faker->numberBetween(1, 2),
         // 'status_id' => function () {
         //     return factory(App\Status::class)->create()->id;
