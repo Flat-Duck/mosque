@@ -15,7 +15,7 @@ class Student extends Model
      * @var array
      */
     protected $fillable = [
-        'national_number', 'name','enrolment_number','date_join', 'date_birth', 'address', 'phone', 'qualification', 'notes', 'passport', 'nationality_id', 'gender_id', 'status_id', 'level_id','mosque_id'
+        'national_number', 'name','enrolment_number','date_join', 'date_birth', 'address', 'phone', 'qualification', 'notes', 'passport', 'nationality_id', 'gender_id', 'status_id', 'level_id','mosque_id','course_id'
     ];
 
     /**
