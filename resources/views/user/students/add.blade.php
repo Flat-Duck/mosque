@@ -211,7 +211,7 @@
                     <option value="{{ $course->id }}"
                         {{ old('course_id') == $course->id ? 'selected' : '' }}
                     >
-                        {{ $course->name }}
+                        {{ $course->level->name }} || {{$course->start_time}}
                     </option>
                 @endforeach
             </select>
