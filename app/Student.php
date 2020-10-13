@@ -41,6 +41,8 @@ class Student extends Model
             'status_id' => 'required|numeric|exists:statuses,id',
             'level_id' => 'numeric|exists:levels,id',
             'mosque_id' => 'required|numeric|exists:mosques,id',
+            'course_id' => 'required|numeric|exists:courses,id',
+            
         ];
     }
 

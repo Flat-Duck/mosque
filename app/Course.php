@@ -67,7 +67,7 @@ class Course extends Model
     // }
     public function students()
     {
-        return $this->belongsToMany('App\Student', 'course_student', 'course_id', 'student_id');
+        return $this->hasMany('App\Student');// 'course_student', 'course_id', 'student_id');
     }
     /**
      * Returns the paginated list of resources
