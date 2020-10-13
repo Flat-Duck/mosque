@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->integer('enrolment_number')->nullable()->unique();
             $table->string('name');
             $table->date('date_birth');
+            $table->date('date_join');
             $table->text('address');
             $table->string('phone');
             $table->string('qualification');
