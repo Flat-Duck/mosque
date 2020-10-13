@@ -12,12 +12,9 @@ $factory->define(App\Student::class, function (Faker $faker) {
         'qualification' => $faker->name(),
         'notes' => $faker->paragraph(),
         'passport' => $faker->name(),
-        'nationality_id' => function () {
-            return factory(App\Nationality::class)->create()->id;
-        },
-        'gender_id' => function () {
-            return factory(App\Gender::class)->create()->id;
-        },
+
+        'nationality_id' => $faker->numberBetween(1, 5),
+        'gender_id' => $faker->numberBetween(1, 2),
         'status_id' => function () {
             return factory(App\Status::class)->create()->id;
         },
