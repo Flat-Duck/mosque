@@ -72,8 +72,9 @@ class StudentController extends Controller
         $statuses = Status::all();
         $levels = Level::all();
         $mosques = Mosque::all();
+        $courses = Course::all();
 
-        return view('user.students.edit', compact('student', 'nationalities', 'genders', 'statuses', 'levels','mosques'));
+        return view('user.students.edit', compact('student', 'nationalities', 'genders', 'statuses', 'levels','mosques','courses'));
     }
 
     /**
