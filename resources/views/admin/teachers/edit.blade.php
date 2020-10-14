@@ -213,7 +213,7 @@
             <input type="number"
                 class="form-control"
                 name="national_number"
-                required
+                
                 placeholder="الرقم الوطني"
                 value="{{ old('national_number', $teacher->national_number) }}"
                 step="any"
