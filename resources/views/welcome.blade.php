@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>شؤون الاوقاف</title>
+    <title>مسجدنا</title>
     <link href="css/uncss.css" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico">
 </head>
@@ -22,14 +22,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">ادارة شؤون الاوقاف</a>
+                    <a class="navbar-brand" style="" href="#">مسجدنا</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#main-slider"><i class="icon-home"></i></a></li>
                         <li><a href="{{ url('/admin/dashboard') }}">دخول لجنة الاوقاف</a></li>
-                        <li><a href="{{ url('/user/dashboard') }}">دحول مشرف المسجد</a></li>
-                        <li><a href="{{ url('/result') }}">عرض نتائج الامنتحانات</a></li>
+                        <li><a href="{{ url('/user/dashboard') }}">دخول مشرف المسجد</a></li>
+                        <li><a href="{{ url('/result') }}">عرض نتائج الامتحانات</a></li>
 
                     </ul>
                 </div>
