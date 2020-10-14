@@ -26,12 +26,12 @@
                 id="national_number"
             >
         </div>
-<input type="hidden" name="enrolment_number" value="{{ old('enrolment_number', $student->enrolment_number) }}">
+{{-- <input type="hidden" name="enrolment_number" value="{{ old('enrolment_number', $student->enrolment_number) }}"> --}}
         <div class="form-group">
             <label for="enrolment_number">رقم القيد</label>
             <input  type="number"
                 class="form-control"
-                name="enrolment_number1"
+                name="enrolment_number"
                 required
                 placeholder="رقم القيد"
                 value="{{ old('enrolment_number', $student->enrolment_number) }}"
@@ -198,17 +198,17 @@
         </div>
 
         <div class="form-group">
-            <label for="level-id">المستوى</label>
+            <label for="course-id">الدورة</label>
             <select class="form-control"
-                name="level_id"
+                name="course_id"
                 required
-                id="level-id"
+                id="course-id"
             >
-                @foreach ($levels as $level)
-                    <option value="{{ $level->id }}"
-                        {{ old('level_id', $student->level_id) == $level->id ? 'selected' : '' }}
+                @foreach ($courses as $course)
+                    <option value="{{ $course->id }}"
+                        {{ old('course_id', $student->course_id) == $course->id ? 'selected' : '' }}
                     >
-                        {{ $level->name }}
+                        {{ $course->level->name }} || {{ $course->start_time }}
                     </option>
                 @endforeach
             </select>

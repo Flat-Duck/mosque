@@ -174,6 +174,13 @@
     
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+    {{-- <script type="text/javascript" src="/js/datatables.min.js"></script> --}}
+
+    {{-- https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js --}}
+    
+   
     
     @if (session('message'))
         <script>
@@ -182,10 +189,17 @@
     @endif
     <script>
         $(document).ready(function () {
-            $('#table').DataTable();
+            // $('#table').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
         });
-        
+        $(document).ready(function() {
+            $('#table').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+            'print'
+            ]
+            } );
+            } );
     </script>
 
     {{-- You can put page wise javascript in scripts section --}}

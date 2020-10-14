@@ -118,6 +118,10 @@ Auth::routes();
  {
     return view('welcome');
  });
+ Route::get('/report', function ()
+ {
+    return view('admin.reports.mosques');
+ });
 
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/killer', 'LoginController@showLoginForm')->name('mosque.login');

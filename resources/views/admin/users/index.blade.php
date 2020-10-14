@@ -79,3 +79,16 @@
     {{ $users->links('vendor.pagination.default') }}
 </div>
 @endsection
+@section('scripts')
+    
+<script>
+    $(document).ready(function() {
+    $('#table').DataTable( {
+    dom: 'Bfrtip',
+    buttons: [
+    'print'
+    ]
+    } );
+    } );
+</script>
+@endsection
