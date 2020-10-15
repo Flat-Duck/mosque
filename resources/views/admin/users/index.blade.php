@@ -35,7 +35,7 @@
         @forelse ($users as $user)
             <tr>
                 <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
+                <td>{{ $user->teacher->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->teacher->mosque->name }}</td>
                 {{-- <td>{{ $user->getDesignation() }}</td> --}}
