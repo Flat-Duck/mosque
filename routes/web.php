@@ -36,6 +36,8 @@ Route::name('admin.')->prefix('admin')->namespace('Admin')->group(function () {
 
         Route::post('/report/mosuques', 'RerportController@mosques')->name('report1');
         Route::post('/report/finishers', 'RerportController@finishers')->name('report2');
+        Route::post('/report/teachers', 'RerportController@teachers')->name('report3');
+        Route::post('/report/gender', 'RerportController@genders')->name('report4');
         
         Route::get('/report', 'RerportController@index')->name('report');
         

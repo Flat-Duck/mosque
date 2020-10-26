@@ -10,6 +10,7 @@ use App\Teacher;
 use App\User;
 use App\Level;
 use App\Exam;
+use App\Student;
 use DB;
 //use App\Nationality;
 
@@ -30,6 +31,19 @@ class RerportController extends Controller
         $mosques = DB::table('mosques')->where('address', 'like', '%' .request()->city. '%')->get();
         return view("admin.reports.mosques", compact('mosques'));
     }
+
+    public function genders()
+    {
+        $students = Student::where('mosque_id', request()->mosque_id)->where('gender_id', request()->gender_id)->get();
+        return view("admin.reports.students", compact('students'));
+    }
+
+        public function teachers()
+    {
+        $teachers = Teacher::where('mosque_id', request()->mosque_id)->get();
+        return view("admin.reports.teachers", compact('teachers'));
+    }
+
     public function finishers()
     {
         $exams = Exam::where('level_id',request()->level_id)->get();

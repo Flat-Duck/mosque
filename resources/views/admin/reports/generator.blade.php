@@ -60,7 +60,52 @@
         </div>
         <button type="submit" class="btn btn-primary mb-2">عرض</button>
     </form>
+    <div class="clearfix"></div>
+</div>
+    <div class="x_title">
+        <form class="form-inline" role="form" method="POST" action="{{ route('admin.report3') }}">
+            @csrf
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="mosque-id">الجامع</label>
+                <select class="form-control" style="width: 200px" name="mosque_id" required id="mosque-id">
+                    @foreach ($mosques as $mosque)
+                    <option value="{{ $mosque->id }}" {{ old('mosque_id') == $mosque->id ? 'selected' : '' }}>
+                        {{ $mosque->name }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">عرض</button>
+        </form>
     
+    <div class="clearfix"></div>
+</div>
+<div class="x_title">
+    <form class="form-inline" role="form" method="POST" action="{{ route('admin.report4') }}">
+        @csrf
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="mosque-id">الجامع</label>
+            <select class="form-control" style="width: 200px" name="mosque_id" required id="mosque-id">
+                @foreach ($mosques as $mosque)
+                <option value="{{ $mosque->id }}" {{ old('mosque_id') == $mosque->id ? 'selected' : '' }}>
+                    {{ $mosque->name }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="gender-id">الجنس</label>
+            <select class="form-control" style="width: 200px" name="gender_id" required id="gender-id">
+                @foreach ($genders as $gender)
+                <option value="{{ $gender->id }}" {{ old('gender_id') == $gender->id ? 'selected' : '' }}>
+                    {{ $gender->name }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">عرض</button>
+    </form>
+
     <div class="clearfix"></div>
 </div>
 {{-- 
