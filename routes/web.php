@@ -40,7 +40,7 @@ Route::name('admin.')->prefix('admin')->namespace('Admin')->group(function () {
         Route::post('/report/gender', 'RerportController@genders')->name('report4');
         
         Route::get('/report', 'RerportController@index')->name('report');
-        
+        Route::resource('admins', 'AdminsController');
         Route::resource('users', 'UserController');
 
         // Route::resource('students', 'StudentController');
@@ -98,7 +98,7 @@ Route::name('user.')->prefix('user')->namespace('User')->group(function () {
         
         Route::get('/report', 'RerportController@index')->name('report');
 
-         Route::resource('admins', 'AdminsController');
+        
         Route::resource('rooms', 'RoomController');
 
         Route::resource('students', 'StudentController');
