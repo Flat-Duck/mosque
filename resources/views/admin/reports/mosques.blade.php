@@ -20,8 +20,8 @@
         تاريخ الانشاء
     </div>
 </div>
-
-@foreach ($mosques as $k=> $mosque)
+@if (!is_null($mosques))
+@forelse ($mosques as $k=> $mosque)
     
 <div class="row">
     <div class="col-1-5">
@@ -40,8 +40,11 @@
         {{$mosque->date_construction}}
     </div>
 </div>
-@endforeach
+@empty
+<p>لاتوجد بيانات</p>
+@endforelse
 
+@endif
 <div class="row panel">
    <div class="col-1-5 panel">
         #

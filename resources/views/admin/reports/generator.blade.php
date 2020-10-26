@@ -4,7 +4,9 @@
 
 @section('content')
 <div class="x_title">
-    {{-- <form class="form-inline" style="display: inline">
+    <h3>تقرير المساجد في منطقة</h3>
+    <br/>
+    {{-- <form  target="_blank" class="form-inline" style="display: inline">
        <h1> 
          <label for="mosque-id">الجامع</label> 
        </h1>
@@ -24,7 +26,8 @@
             إضافة جديد
         </a>
     </form> --}}
-    <form class="form-inline" role="form" method="POST" action="{{ route('admin.report1') }}">
+    <form  target="_blank" class="form-inline" role="form" method="POST" action="{{ route('admin.report1') }}">
+        
         @csrf
         <div class="form-group mx-sm-3 mb-2">
             <label for="city" class="sr-only">ادخل اسم المنطقة</label>
@@ -36,7 +39,9 @@
     <div class="clearfix"></div>
 </div>
 <div class="x_title">
-    <form class="form-inline" role="form" method="POST" action="{{ route('admin.report2') }}">
+    <h3>تقرير الطلبة  في مستوى</h3>
+    <br />
+    <form  target="_blank" class="form-inline" role="form" method="POST" action="{{ route('admin.report2') }}">
         @csrf
         <div class="form-group mx-sm-3 mb-2">
             <label for="mosque-id">الجامع</label>
@@ -63,7 +68,9 @@
     <div class="clearfix"></div>
 </div>
     <div class="x_title">
-        <form class="form-inline" role="form" method="POST" action="{{ route('admin.report3') }}">
+        <h3>تقرير المعلمين في مسجد</h3>
+        <br /> 
+        <form  target="_blank" class="form-inline" role="form" method="POST" action="{{ route('admin.report3') }}">
             @csrf
             <div class="form-group mx-sm-3 mb-2">
                 <label for="mosque-id">الجامع</label>
@@ -81,7 +88,9 @@
     <div class="clearfix"></div>
 </div>
 <div class="x_title">
-    <form class="form-inline" role="form" method="POST" action="{{ route('admin.report4') }}">
+    <h3>تقرير الطلبة لجنس معين </h3>
+    <br />
+    <form  target="_blank" class="form-inline" role="form" method="POST" action="{{ route('admin.report4') }}">
         @csrf
         <div class="form-group mx-sm-3 mb-2">
             <label for="mosque-id">الجامع</label>

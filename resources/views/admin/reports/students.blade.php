@@ -43,7 +43,7 @@
     </div>
 </div>
 @empty
-<p>No replies</p>
+<p>لاتوجد بيانات</p>
 @endforelse
 @endif
 <div class="row panel">
