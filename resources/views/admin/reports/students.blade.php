@@ -8,55 +8,59 @@
         #
     </div>
     <div class="col-1-10 panel">
-        اسم المسجد
+        اسم الطالب
     </div>
     <div class="col-1-52 panel">
-        العنوان
+        رقم القيد
     </div>
     <div class="col-1-10 panel">
-        الشارع
+        تاريخ الميلاد
     </div>
     <div class="col-1-10 panel">
-        تاريخ الانشاء
+       الجنس
     </div>
 </div>
 
-@foreach ($mosques as $k=> $mosque)
+@if (!is_null($students))
+    
+@forelse ($students as $k=> $student)
     
 <div class="row">
     <div class="col-1-5">
         {{$k+1}}
     </div>
     <div class="col-1-10">
-{{$mosque->name}}
+{{$student->name}}
     </div>
     <div class="col-1-52">
-        {{$mosque->address}}
+        {{$student->enrolment_number}}
     </div>
     <div class="col-1-10">
-        {{$mosque->street}}
+        {{$student->date_birth}}
     </div>
     <div class="col-1-10">
-        {{$mosque->date_construction}}
+        {{$student->gender->name}}
     </div>
 </div>
-@endforeach
-
+@empty
+<p>No replies</p>
+@endforelse
+@endif
 <div class="row panel">
-   <div class="col-1-5 panel">
-        #
-    </div>
-    <div class="col-1-10 panel">
-        اسم المسجد
-    </div>
-    <div class="col-1-52 panel">
-        العنوان
-    </div>
-    <div class="col-1-10 panel">
-        الشارع
-    </div>
-    <div class="col-1-10 panel">
-        تاريخ الانشاء
-    </div>
+  <div class="col-1-5 panel">
+    #
+</div>
+<div class="col-1-10 panel">
+    اسم الطالب
+</div>
+<div class="col-1-52 panel">
+    رقم القيد
+</div>
+<div class="col-1-10 panel">
+    تاريخ الميلاد
+</div>
+<div class="col-1-10 panel">
+    الجنس
+</div>
 </div>
 @endsection

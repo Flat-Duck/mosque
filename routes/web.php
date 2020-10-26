@@ -34,7 +34,12 @@ Route::name('admin.')->prefix('admin')->namespace('Admin')->group(function () {
 
         Route::resource('mosques', 'MosqueController');
 
-         Route::resource('users', 'UserController');
+        Route::post('/report/mosuques', 'RerportController@mosques')->name('report1');
+        Route::post('/report/finishers', 'RerportController@finishers')->name('report2');
+        
+        Route::get('/report', 'RerportController@index')->name('report');
+        
+        Route::resource('users', 'UserController');
 
         // Route::resource('students', 'StudentController');
 
@@ -118,10 +123,23 @@ Auth::routes();
  {
     return view('welcome');
  });
- Route::get('/report', function ()
- {
-    return view('admin.reports.mosques');
- });
+//  Route::get('/report', function ()
+//  {
+//     return view('reports.generator');
+//  });
+
+// Route::name('user.')->prefix('user')->group(function () {
+//   //  Route::namespace('Auth')->middleware('guest:user')->group(function () {
+//         Route::namespace('User')->group(function () {
+//              Route::get('/report', 'RerportController@index')->name('report');
+
+//         });
+//     });
+//});
+
+
+
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/killer', 'LoginController@showLoginForm')->name('mosque.login');
