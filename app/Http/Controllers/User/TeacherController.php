@@ -61,15 +61,8 @@ class TeacherController extends Controller
         $teacher = Teacher::create($validatedData);
 
         if($teacher->description == 2){
-            $user = new User();
-              
-            $user->name = $teacher->name;
-            $user->email = $teacher->email;
-            $user->teacher_id = $teacher->id;
-            $user->password = bcrypt('password');
-            $user->save();
-            $user->notify(new UserRegistered($user->teacher->mosque->name,$user->email,$user->name,"password"));
-            }
+           createUserAccount($teacher->name,$teacher->email,$teacher->id);
+        }
         return redirect()->route('user.teachers.index')->with([
             'type' => 'success',
             'message' => 'Teacher added'
@@ -109,7 +102,11 @@ class TeacherController extends Controller
         $validatedData = request()->validate(
             Teacher::validationRules($teacher->id)
         );
-
+        if($teacher->description == 2){
+           createUserAccount($teacher->name,$teacher->email,$teacher->id);
+        }else {
+            deletUserAccount($teacher->email);
+        }
         $teacher->update($validatedData);
 
         return redirect()->route('user.teachers.index')->with([
@@ -140,4 +137,19 @@ class TeacherController extends Controller
             'message' => 'Teacher deleted successfully'
         ]);
     }
-}
+    
+    public function createUserAccount($name,$email,$id){
+        $user = new User();      
+        $user->name = $name;
+        $user->email = $email;
+        $user->teacher_id = $id;
+        $user->password = bcrypt('password');
+        $user->save();
+        $user->notify(new UserRegistered($user->teacher->mosque->name,$user->email,$user->name,"password"));
+        }
+        public function deletUserAccount($email)
+        {
+            $user = User::where('email', $email)->first();
+            $user->delete();
+        }
+    }

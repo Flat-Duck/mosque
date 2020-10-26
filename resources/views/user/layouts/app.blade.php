@@ -117,7 +117,12 @@
                                         <span>الامتحانات</span>
                                     </a>
                                 </li>
-
+                                <li {{ $page == 'report' ? ' class=active' : '' }}>
+                                    <a href="{{ route('user.report') }}">
+                                        <i class="fa fa-arrow-right"></i>
+                                        <span>التقارير</span>
+                                    </a>
+                                </li>
                                 {{-- <li {{ $page == 'level' ? ' class=active' : '' }}>
                                     <a href="{{ route('user.levels.index') }}">
                                         <i class="fa fa-arrow-right"></i>

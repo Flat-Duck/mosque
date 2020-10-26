@@ -55,6 +55,12 @@
                                         لوحة التحكم
                                     </a>
                                 </li>
+                                <li {{ $page == 'admin' ? ' class=active' : '' }}>
+                                    <a href="{{ route('admin.admins.index') }}">
+                                        <i class="fa fa-lock"></i>
+                                        <span>إدارة المستخدمين </span>
+                                    </a>
+                                </li>
 
                                 <li {{ $page == 'mosque' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.mosques.index') }}">
@@ -72,7 +78,7 @@
                                 <li {{ $page == 'user' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.users.index') }}">
                                         <i class="fa fa-lock"></i>
-                                        <span>إدارة المستخدمين </span>
+                                        <span>إدارة حسابات المشرفين </span>
                                     </a>
                                 </li>
                                 <li {{ $page == 'report' ? ' class=active' : '' }}>

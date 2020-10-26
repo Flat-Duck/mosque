@@ -45,7 +45,19 @@
                 id="start_time"
             >
         </div>
-
+  <div class="box-body">
+        <div class="form-group">
+            <label for="year">لسنة </label>
+            <input type="text"
+                class="form-control"
+                name="year"
+                required
+                placeholder="توقيت البداية"
+                value="{{ old('year', $course->year) }}"
+                step="2"
+                id="year"
+            >
+        </div>
         <div class="form-group">
             <label for="end_time">توقيت النهاية</label>
             <input type="time"

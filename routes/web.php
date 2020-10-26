@@ -89,6 +89,16 @@ Route::name('user.')->prefix('user')->namespace('User')->group(function () {
 
         // Route::resource('mosques', 'MosqueController');
 
+
+        
+        Route::post('/report/mosuques', 'RerportController@mosques')->name('report1');
+        Route::post('/report/finishers', 'RerportController@finishers')->name('report2');
+        Route::post('/report/teachers', 'RerportController@teachers')->name('report3');
+        Route::post('/report/gender', 'RerportController@genders')->name('report4');
+        
+        Route::get('/report', 'RerportController@index')->name('report');
+
+         Route::resource('admins', 'AdminsController');
         Route::resource('rooms', 'RoomController');
 
         Route::resource('students', 'StudentController');
