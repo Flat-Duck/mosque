@@ -55,7 +55,7 @@
                                         لوحة التحكم
                                     </a>
                                 </li>
-                                <li {{ $page == 'admin' ? ' class=active' : '' }}>
+                                <li {{ $page == 'admins' ? ' class=active' : '' }}>
                                     <a href="{{ route('admin.admins.index') }}">
                                         <i class="fa fa-lock"></i>
                                         <span>إدارة المستخدمين </span>

@@ -4,101 +4,101 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Admin;
 
 class AdminsController extends Controller
 {
     
     /**
-     * Display a list of Exams.
+     * Display a list of Admins.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $exams = Exam::getList();
+        $admins = Admin::getList();
 
-        return view('admin.exams.index', compact('exams'));
+        return view('admin.admins.index', compact('admins'));
     }
 
     /**
-     * Show the form for creating a new Exam
+     * Show the form for creating a new Admin
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        $students = Student::all();
-        $teachers = Teacher::all();
-        $levels = Level::all();
 
-        return view('admin.exams.add', compact('students', 'teachers', 'levels'));
+        return view('admin.admins.add');
     }
 
     /**
-     * Save new Exam
+     * Save new Admin
      *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
     {
-        $validatedData = request()->validate(Exam::validationRules());
+        request()->merge(['password'=>bcrypt('password')]);
+        $validatedData = request()->validate(Admin::validationRules(null));
+        $admin = Admin::create($validatedData);
 
-        $exam = Exam::create($validatedData);
 
-        return redirect()->route('admin.exams.index')->with([
+
+        return redirect()->route('admin.admins.index')->with([
             'type' => 'success',
-            'message' => 'Exam added'
+            'message' => 'Admin added'
         ]);
     }
 
     /**
-     * Show the form for editing the specified Exam
+     * Show the form for editing the specified Admin
      *
-     * @param \App\Exam $exam
+     * @param \App\Admin $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Exam $exam)
+    public function edit(Admin $admin)
     {
-        $students = Student::all();
-        $teachers = Teacher::all();
-        $levels = Level::all();
+        // $students = Student::all();
+        // $teachers = Teacher::all();
+        // $levels = Level::all();
 
-        return view('admin.exams.edit', compact('exam', 'students', 'teachers', 'levels'));
+        return view('admin.admins.edit',compact('admin'));
     }
 
     /**
-     * Update the Exam
+     * Update the Admin
      *
-     * @param \App\Exam $exam
+     * @param \App\Admin $admin
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Exam $exam)
+    public function update(Admin $admin)
     {
         $validatedData = request()->validate(
-            Exam::validationRules($exam->id)
+            Admin::validationRules($admin->id)
         );
 
-        $exam->update($validatedData);
+        $admin->update($validatedData);
 
-        return redirect()->route('admin.exams.index')->with([
+        return redirect()->route('admin.admins.index')->with([
             'type' => 'success',
-            'message' => 'Exam Updated'
+            'message' => 'Admin Updated'
         ]);
     }
 
     /**
-     * Delete the Exam
+     * Delete the Admin
      *
-     * @param \App\Exam $exam
+     * @param \App\Admin $admin
      * @return void
      */
-    public function destroy(Exam $exam)
+    public function destroy(Admin $admin)
     {
-        $exam->delete();
+        $admin->delete();
 
-        return redirect()->route('admin.exams.index')->with([
+        return redirect()->route('admin.admins.index')->with([
             'type' => 'success',
-            'message' => 'Exam deleted successfully'
+            'message' => 'Admin deleted successfully'
         ]);
     }
 }

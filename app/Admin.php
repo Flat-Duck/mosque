@@ -74,4 +74,18 @@ class Admin extends Authenticatable
             'password' => 'required|string|min:8|confirmed',
         ];
     }
+    public static function validationRules($id = null)
+    {
+        return [
+            
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:admins,username,'.$id,
+            'email' => 'required|email|max:255|unique:admins,email,'.$id,
+            'password' => 'required|string',
+        ];
+    } 
+        public static function getList()
+    {
+        return static::paginate(10);
+    }
 }
