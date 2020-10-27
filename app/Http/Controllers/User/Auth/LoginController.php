@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/dashboard';
+    protected $redirectTo = '/user/dashboard';
 
     /**
      * Show the application's login form.
@@ -46,7 +46,7 @@ class LoginController extends Controller
      */
     public function username()
     {
-        return 'username';
+        return 'email';
     }
 
     /**
@@ -54,7 +54,7 @@ class LoginController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard('admin');
+        return Auth::guard('web');
     }
 
     /**
@@ -68,6 +68,6 @@ class LoginController extends Controller
 
         request()->session()->invalidate();
 
-        return redirect('/admin');
+        return redirect('/login');
     }
 }

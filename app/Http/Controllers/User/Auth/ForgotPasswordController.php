@@ -38,6 +38,6 @@ class ForgotPasswordController extends Controller
      */
     protected function broker()
     {
-        return Password::broker('admins');
+        return Password::broker('users');
     }
 }

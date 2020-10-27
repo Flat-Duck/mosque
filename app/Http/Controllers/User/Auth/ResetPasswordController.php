@@ -27,7 +27,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/dashboard';
+    protected $redirectTo = '/user/dashboard';
 
     /**
      * Display the password reset view for the given token.
@@ -48,7 +48,7 @@ class ResetPasswordController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard('admin');
+        return Auth::guard('web');
     }
 
     /**
@@ -58,6 +58,6 @@ class ResetPasswordController extends Controller
      */
     protected function broker()
     {
-        return Password::broker('admins');
+        return Password::broker('users');
     }
 }

@@ -9,7 +9,7 @@
     @csrf
 
     <div>
-        <input type="text" name="email" class="form-control" placeholder="email" required>
+        <input type="text" name="email" class="form-control" placeholder="البريد الالكتروني" required>
     </div>
 
     <div>
@@ -18,17 +18,17 @@
 
     <div class="text-left">
         <label for="login-checkbox">
-            <input type="checkbox" id="login-checkbox" name="remember"> Remember Me
+            <input type="checkbox" id="login-checkbox" name="remember">تذكرني
         </label>
     </div> <br>
 
     <div>
         <button type="submit" class="btn btn-default submit">
-            Sign In
+            تسجيل دخول
         </button>
 
         <a href="{{ route('admin.forgot_password') }}">
-            I forgot my password
+            لقد نسيت كلمة المرور
         </a>
     </div>
 
