@@ -94,7 +94,7 @@ class User extends Authenticatable
     public static function passwordValidationRules()
     {
         return [
-            'current_password' => 'required|string|min:8',
+            'current_password' => 'required|string|min:4',
             'password' => 'required|string|min:8|confirmed',
         ];
     }
