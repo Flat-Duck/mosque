@@ -23,12 +23,12 @@ class Student extends Model
      *
      * @return array
      **/
-    public static function validationRules()
+    public static function validationRules($id =null)
     {
         return [
-            'national_number' => 'nullable|unique:students,national_number',
+            'national_number' => 'nullable|unique:students,national_number,'.$id,
             'name' => 'required|string',
-            'enrolment_number' => 'required|numeric|unique:students,enrolment_number',
+            'enrolment_number' => 'required|numeric|unique:students,enrolment_number,'.$id,
             'date_birth' => 'required|date',
             'date_join' => 'required|date',
             'address' => 'required|string',
