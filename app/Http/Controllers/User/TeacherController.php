@@ -62,7 +62,7 @@ class TeacherController extends Controller
     //     }
     //     return redirect()->route('user.teachers.index')->with([
     //         'type' => 'success',
-    //         'message' => 'Teacher added'
+    //         'message' => 'تمت الاضافة بنجاح'
     //     ]);
     // }
 
@@ -110,7 +110,7 @@ class TeacherController extends Controller
 
     //     return redirect()->route('user.teachers.index')->with([
     //         'type' => 'success',
-    //         'message' => 'Teacher Updated'
+    //         'message' => 'تم التعديل بنجاح'
     //     ]);
     // }
 
@@ -125,7 +125,7 @@ class TeacherController extends Controller
     //     // if ($teacher->exams()->count()) {
     //     //     return redirect()->route('user.teachers.index')->with([
     //     //         'type' => 'error',
-    //     //         'message' => 'This record cannot be deleted as there are relationship dependencies.'
+    //     //         'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
     //     //     ]);
     //     // }
 
@@ -133,7 +133,7 @@ class TeacherController extends Controller
 
     //     return redirect()->route('user.teachers.index')->with([
     //         'type' => 'success',
-    //         'message' => 'Teacher deleted successfully'
+    //         'message' => 'تم الحذف بنجاح'
     //     ]);
     // }
     

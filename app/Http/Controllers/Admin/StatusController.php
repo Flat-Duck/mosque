@@ -42,7 +42,7 @@ class StatusController extends Controller
 
         return redirect()->route('admin.statuses.index')->with([
             'type' => 'success',
-            'message' => 'Status added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -73,7 +73,7 @@ class StatusController extends Controller
 
         return redirect()->route('admin.statuses.index')->with([
             'type' => 'success',
-            'message' => 'Status Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -88,7 +88,7 @@ class StatusController extends Controller
         if ($status->students()->count() || $status->teachers()->count()) {
             return redirect()->route('admin.statuses.index')->with([
                 'type' => 'error',
-                'message' => 'This record cannot be deleted as there are relationship dependencies.'
+                'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
             ]);
         }
 
@@ -96,7 +96,7 @@ class StatusController extends Controller
 
         return redirect()->route('admin.statuses.index')->with([
             'type' => 'success',
-            'message' => 'Status deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

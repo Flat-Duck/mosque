@@ -42,7 +42,7 @@ class LevelController extends Controller
 
         return redirect()->route('user.levels.index')->with([
             'type' => 'success',
-            'message' => 'Level added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -73,7 +73,7 @@ class LevelController extends Controller
 
         return redirect()->route('user.levels.index')->with([
             'type' => 'success',
-            'message' => 'Level Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -88,7 +88,7 @@ class LevelController extends Controller
         if ($level->students()->count() || $level->exams()->count() || $level->courses()->count()) {
             return redirect()->route('user.levels.index')->with([
                 'type' => 'error',
-                'message' => 'This record cannot be deleted as there are relationship dependencies.'
+                'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
             ]);
         }
 
@@ -96,7 +96,7 @@ class LevelController extends Controller
 
         return redirect()->route('user.levels.index')->with([
             'type' => 'success',
-            'message' => 'Level deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

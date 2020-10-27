@@ -52,7 +52,7 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')->with([
             'type' => 'success',
-            'message' => 'User added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -94,7 +94,7 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')->with([
             'type' => 'success',
-            'message' => 'User Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -109,7 +109,7 @@ class UserController extends Controller
         // if ($user->exams()->count()) {
         //     return redirect()->route('admin.teachers.index')->with([
         //         'type' => 'error',
-        //         'message' => 'This record cannot be deleted as there are relationship dependencies.'
+        //         'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
         //     ]);
         // }
 
@@ -117,7 +117,7 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')->with([
             'type' => 'success',
-            'message' => 'User deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

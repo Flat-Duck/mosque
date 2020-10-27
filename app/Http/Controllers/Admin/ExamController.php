@@ -49,7 +49,7 @@ class ExamController extends Controller
 
         return redirect()->route('admin.exams.index')->with([
             'type' => 'success',
-            'message' => 'Exam added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -84,7 +84,7 @@ class ExamController extends Controller
 
         return redirect()->route('admin.exams.index')->with([
             'type' => 'success',
-            'message' => 'Exam Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -100,7 +100,7 @@ class ExamController extends Controller
 
         return redirect()->route('admin.exams.index')->with([
             'type' => 'success',
-            'message' => 'Exam deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

@@ -47,7 +47,7 @@ class RoomController extends Controller
 
         return redirect()->route('admin.rooms.index')->with([
             'type' => 'success',
-            'message' => 'Room added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -82,7 +82,7 @@ class RoomController extends Controller
 
         return redirect()->route('admin.rooms.index')->with([
             'type' => 'success',
-            'message' => 'Room Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -98,7 +98,7 @@ class RoomController extends Controller
 
         return redirect()->route('admin.rooms.index')->with([
             'type' => 'success',
-            'message' => 'Room deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

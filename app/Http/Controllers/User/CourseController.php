@@ -49,7 +49,7 @@ class CourseController extends Controller
 
         return redirect()->route('user.courses.index')->with([
             'type' => 'success',
-            'message' => 'Course added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -84,7 +84,7 @@ class CourseController extends Controller
 
         return redirect()->route('user.courses.index')->with([
             'type' => 'success',
-            'message' => 'Course Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -102,7 +102,7 @@ class CourseController extends Controller
 
         return redirect()->route('user.courses.index')->with([
             'type' => 'success',
-            'message' => 'Course deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

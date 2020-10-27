@@ -55,7 +55,7 @@ class StudentController extends Controller
 
         return redirect()->route('user.students.index')->with([
             'type' => 'success',
-            'message' => 'Student added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -93,7 +93,7 @@ class StudentController extends Controller
 
         return redirect()->route('user.students.index')->with([
             'type' => 'success',
-            'message' => 'Student Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -108,7 +108,7 @@ class StudentController extends Controller
         if ($student->exams()->count()) {
             return redirect()->route('user.students.index')->with([
                 'type' => 'error',
-                'message' => 'This record cannot be deleted as there are relationship dependencies.'
+                'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
             ]);
         }
 
@@ -116,7 +116,7 @@ class StudentController extends Controller
 
         return redirect()->route('user.students.index')->with([
             'type' => 'success',
-            'message' => 'Student deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

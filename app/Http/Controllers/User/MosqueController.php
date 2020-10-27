@@ -42,7 +42,7 @@ class MosqueController extends Controller
 
         return redirect()->route('user.mosques.index')->with([
             'type' => 'success',
-            'message' => 'Mosque added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -73,7 +73,7 @@ class MosqueController extends Controller
 
         return redirect()->route('user.mosques.index')->with([
             'type' => 'success',
-            'message' => 'Mosque Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -88,7 +88,7 @@ class MosqueController extends Controller
         // if ($mosque->rooms()->count() || $mosque->teachers()->count()) {
         //     return redirect()->route('user.mosques.index')->with([
         //         'type' => 'error',
-        //         'message' => 'This record cannot be deleted as there are relationship dependencies.'
+        //         'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
         //     ]);
       //  }
 
@@ -96,7 +96,7 @@ class MosqueController extends Controller
 
         return redirect()->route('user.mosques.index')->with([
             'type' => 'success',
-            'message' => 'Mosque deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

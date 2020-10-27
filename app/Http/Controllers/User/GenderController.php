@@ -42,7 +42,7 @@ class GenderController extends Controller
 
         return redirect()->route('user.genders.index')->with([
             'type' => 'success',
-            'message' => 'Gender added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -73,7 +73,7 @@ class GenderController extends Controller
 
         return redirect()->route('user.genders.index')->with([
             'type' => 'success',
-            'message' => 'Gender Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -88,7 +88,7 @@ class GenderController extends Controller
         if ($gender->teachers()->count() || $gender->students()->count()) {
             return redirect()->route('user.genders.index')->with([
                 'type' => 'error',
-                'message' => 'This record cannot be deleted as there are relationship dependencies.'
+                'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
             ]);
         }
 
@@ -96,7 +96,7 @@ class GenderController extends Controller
 
         return redirect()->route('user.genders.index')->with([
             'type' => 'success',
-            'message' => 'Gender deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

@@ -47,7 +47,7 @@ class AdminsController extends Controller
 
         return redirect()->route('admin.admins.index')->with([
             'type' => 'success',
-            'message' => 'Admin added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -82,7 +82,7 @@ class AdminsController extends Controller
 
         return redirect()->route('admin.admins.index')->with([
             'type' => 'success',
-            'message' => 'Admin Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -98,7 +98,7 @@ class AdminsController extends Controller
 
         return redirect()->route('admin.admins.index')->with([
             'type' => 'success',
-            'message' => 'Admin deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }

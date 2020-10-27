@@ -42,7 +42,7 @@ class NationalityController extends Controller
 
         return redirect()->route('user.nationalities.index')->with([
             'type' => 'success',
-            'message' => 'Nationality added'
+            'message' => 'تمت الاضافة بنجاح'
         ]);
     }
 
@@ -73,7 +73,7 @@ class NationalityController extends Controller
 
         return redirect()->route('user.nationalities.index')->with([
             'type' => 'success',
-            'message' => 'Nationality Updated'
+            'message' => 'تم التعديل بنجاح'
         ]);
     }
 
@@ -88,7 +88,7 @@ class NationalityController extends Controller
         if ($nationality->students()->count() || $nationality->teachers()->count()) {
             return redirect()->route('user.nationalities.index')->with([
                 'type' => 'error',
-                'message' => 'This record cannot be deleted as there are relationship dependencies.'
+                'message' => 'لايمكن حذف هذا السجل لانه مرتبط بعلاقات اخرى'
             ]);
         }
 
@@ -96,7 +96,7 @@ class NationalityController extends Controller
 
         return redirect()->route('user.nationalities.index')->with([
             'type' => 'success',
-            'message' => 'Nationality deleted successfully'
+            'message' => 'تم الحذف بنجاح'
         ]);
     }
 }
