@@ -59,17 +59,10 @@ class TeacherController extends Controller
         $validatedData = request()->validate(Teacher::validationRules());
 
         $teacher = Teacher::create($validatedData);
-
+      
         if($teacher->description == 2){
-            $user = new User();
-              
-            $user->name = $teacher->name;
-            $user->email = $teacher->email;
-            $user->teacher_id = $teacher->id;
-            $user->password = bcrypt('password');
-            $user->save();
-            $user->notify(new UserRegistered($user->teacher->mosque->name,$user->email,$user->name,"password"));
-            }
+           $this->createUserAccount($teacher->name,$teacher->email,$teacher->id);
+        }
         return redirect()->route('admin.teachers.index')->with([
             'type' => 'success',
             'message' => 'Teacher added'
@@ -110,8 +103,13 @@ class TeacherController extends Controller
             Teacher::validationRules($teacher->id)
         );
 
-        $teacher->update($validatedData);
+          $teacher->update($validatedData);
 
+        if($teacher->description == 2){
+           $this->createUserAccount($teacher->name,$teacher->email,$teacher->id);
+        }else {
+             $this->deletUserAccount($teacher->email);
+        }
         return redirect()->route('admin.teachers.index')->with([
             'type' => 'success',
             'message' => 'Teacher Updated'
@@ -140,4 +138,23 @@ class TeacherController extends Controller
             'message' => 'Teacher deleted successfully'
         ]);
     }
+        public function createUserAccount($name,$email,$id){
+
+         $user = User::where('email', $email)->first();
+         if(is_null($user)){
+             $user = new User();      
+             $user->name = $name;
+             $user->email = $email;
+             $user->teacher_id = $id;
+             $user->password = bcrypt('password');
+             $user->save();
+             $user->notify(new UserRegistered($user->teacher->mosque->name,$user->email,$user->name,"password"));
+            } 
+        }
+        public function deletUserAccount($email)
+        {
+            $user = User::where('email', $email)->first();
+            if(!is_null($user)){
+                $user->delete();
+            }}
 }

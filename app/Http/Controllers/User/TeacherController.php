@@ -102,12 +102,14 @@ class TeacherController extends Controller
         $validatedData = request()->validate(
             Teacher::validationRules($teacher->id)
         );
+
+       $teacher = $teacher->update($validatedData);
+
         if($teacher->description == 2){
            createUserAccount($teacher->name,$teacher->email,$teacher->id);
         }else {
             deletUserAccount($teacher->email);
         }
-        $teacher->update($validatedData);
 
         return redirect()->route('user.teachers.index')->with([
             'type' => 'success',
@@ -139,17 +141,22 @@ class TeacherController extends Controller
     }
     
     public function createUserAccount($name,$email,$id){
-        $user = new User();      
-        $user->name = $name;
-        $user->email = $email;
-        $user->teacher_id = $id;
-        $user->password = bcrypt('password');
-        $user->save();
-        $user->notify(new UserRegistered($user->teacher->mosque->name,$user->email,$user->name,"password"));
+
+         $user = User::where('email', $email)->first();
+         if(is_null($user)){
+             $user = new User();      
+             $user->name = $name;
+             $user->email = $email;
+             $user->teacher_id = $id;
+             $user->password = bcrypt('password');
+             $user->save();
+             $user->notify(new UserRegistered($user->teacher->mosque->name,$user->email,$user->name,"password"));
+            } 
         }
         public function deletUserAccount($email)
         {
             $user = User::where('email', $email)->first();
-            $user->delete();
-        }
+            if(!is_null($user)){
+                $user->delete();
+            }}
     }
