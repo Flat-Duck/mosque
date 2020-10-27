@@ -14,14 +14,14 @@
 @if (!is_null($exams))
 
 <h1 class="text-center">
-{{$exams->first()->student->mosque->name}}
+    {{$exams->first()->student->mosque->name}}
 </h1>
 <br>
 <br>
 <br>
 <div class="x_title">
 
-  <h3>الاسم: {{$exams->first()->student->name}}    رقم القيد: {{$exams->first()->student->enrolment_number}}  </h3>   
+    <h3>الاسم: {{$exams->first()->student->name}} رقم القيد: {{$exams->first()->student->enrolment_number}} </h3>
     <div class="clearfix"></div>
 </div>
 
@@ -30,7 +30,7 @@
     <table id="table" class="table table-bordered">
         <thead>
             <tr>
-                
+
                 <th>تاريخ الامتجان</th>
                 <th>المستوى</th>
                 <th>المعلم</th>
@@ -49,34 +49,36 @@
                 <td>{{ $exam->level->name }}</td>
                 <td>{{ $exam->teacher->name }}</td>
                 <td>{{ $exam->save }}</td>
-                
+
                 <td>{{ $exam->applied_rules }}</td>
                 <td>{{ $exam->drawing }}</td>
-                
+
                 <td>{{ $exam->pronunciation }}</td>
-                
+
                 @php
-                    $total =
-                    $exam->save +
-                    $exam->applied_rules +
-                    $exam->pronunciation +
-                    $exam->drawing;
-                    @endphp
-                 
-                 <td>{{ $total }}</td>
-                 @switch($total)
-                     @case($total<50)
-                         <td>راسب</td>
-                         @break
-                     @case($total>50&& $total<75)
-                         <td>جيد</td>
-                         @break
-                     @case($total>75&& $total<100)
-                         <td>ممتاز</td>
-                         @break
-                     @default
-                         <td>شن حالك</td>
-                 @endswitch
+                $total =
+                $exam->save +
+                $exam->applied_rules +
+                $exam->pronunciation +
+                $exam->drawing;
+                @endphp
+
+                <td>{{ $total }}</td>
+                @switch($total)
+                @case($total<50) <td>ضعيف</td>
+                    @break
+                    @case($total>=50 && $total<65) <td>مقبول</td>
+                        @break
+                        @case($total>=65&& $total<75) <td>جيد</td>
+                            @break
+                            @case($total>=75&& $total<85) <td>جيد جداً</td>
+                                @break
+                                @case($total>=85&& $total<=100) <td>ممتاز</td>
+                                    @break
+
+                                    @default
+                                    <td>غير مرصودة</td>
+                                    @endswitch
             </tr>
             @empty
             <tr>
