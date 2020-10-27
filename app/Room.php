@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Auth;
 class Room extends Model
 {
     use SoftDeletes;
@@ -68,6 +68,6 @@ class Room extends Model
      **/
     public static function getList()
     {
-        return static::with(['mosque'])->paginate(10);
+        return static::where('mosque_id',Auth::user()->teacher->mosque_id)->with(['mosque'])->paginate(10);
     }
 }

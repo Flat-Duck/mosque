@@ -41,6 +41,14 @@ class Mosque extends Model
         return $this->hasMany('App\Room');
     }
 
+        /**
+     * Get the rooms for the Mosque.
+     */
+    public function students()
+    {
+        return $this->hasMany('App\Student');
+    }
+
     /**
      * Get the teachers for the Mosque.
      */

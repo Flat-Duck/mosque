@@ -10,7 +10,7 @@ use App\Status;
 use App\Level;
 use App\Course;
 use App\Http\Controllers\Controller;
-
+use Auth;
 class StudentController extends Controller
 {
     /**
@@ -36,10 +36,10 @@ class StudentController extends Controller
         $genders = Gender::all();
         $statuses = Status::all();
         $levels = Level::all();
-        $mosques = Mosque::all();
-        $courses = Course::all();
+      //  $mosques = Mosque::all();
+        $courses = Course::where(['mosque_id'=>Auth::user()->teacher->mosque_id])->get();
 
-        return view('user.students.add', compact('nationalities', 'genders', 'statuses', 'levels','mosques','courses'));
+        return view('user.students.add', compact('nationalities', 'genders', 'statuses', 'levels','courses'));// ,'mosques'));
     }
 
     /**
@@ -48,7 +48,7 @@ class StudentController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
-    {
+    {request()->merge(['mosque_id'=>Auth::user()->teacher->mosque_id]);
         $validatedData = request()->validate(Student::validationRules());
 
         $student = Student::create($validatedData);
@@ -72,7 +72,7 @@ class StudentController extends Controller
         $statuses = Status::all();
         $levels = Level::all();
         $mosques = Mosque::all();
-        $courses = Course::all();
+        $courses = Course::where(['mosque_id'=>Auth::user()->teacher->mosque_id])->get();
 
         return view('user.students.edit', compact('student', 'nationalities', 'genders', 'statuses', 'levels','mosques','courses'));
     }

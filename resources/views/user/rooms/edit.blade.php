@@ -56,7 +56,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="mosque-id">الجامع</label>
             <select class="form-control"
                 name="mosque_id"
@@ -71,7 +71,7 @@
                     </option>
                 @endforeach
             </select>
-        </div>
+        </div> --}}
     </div>
 
     <div class="box-footer">

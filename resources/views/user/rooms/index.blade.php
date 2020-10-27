@@ -24,7 +24,7 @@
             <th>الإسم</th>
             <th>السعة</th>
             <th>الطابق</th>
-            <th>الجامع</th>
+            {{-- <th>الجامع</th> --}}
             <th>العمليات</th>
         </tr>
 
@@ -34,7 +34,7 @@
                 <td>{{ $room->name }}</td>
                 <td>{{ $room->capacity }}</td>
                 <td>{{ $room->getFloor() }}</td>
-                <td>{{ $room->mosque->name }}</td>
+                {{-- <td>{{ $room->mosque->name }}</td> --}}
                 <td>
                     <a href="{{ route('user.rooms.edit', ['room' => $room->id]) }}">
                         <i  style="color: orange;" class="fa fa-pencil-square-o"></i>

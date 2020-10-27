@@ -61,7 +61,7 @@
                 id="date_join"
             >
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="mosque-id">الجامع</label>
             <select class="form-control"
                 name="mosque_id"
@@ -76,7 +76,7 @@
                     </option>
                 @endforeach
             </select>
-        </div>
+        </div> --}}
         <div class="form-group">
             <label for="date_birth">تاريخ الميلاد</label>
             <input type="date"

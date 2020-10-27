@@ -7,6 +7,7 @@ use App\Student;
 use App\Teacher;
 use App\Level;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class ExamController extends Controller
 {
@@ -29,8 +30,8 @@ class ExamController extends Controller
      */
     public function create()
     {
-        $students = Student::all();
-        $teachers = Teacher::all();
+        $students = Student::where(['mosque_id'=>Auth::user()->teacher->mosque_id])->get();
+        $teachers = Teacher::where(['mosque_id'=>Auth::user()->teacher->mosque_id])->get();
         $levels = Level::all();
 
         return view('user.exams.add', compact('students', 'teachers', 'levels'));
@@ -43,6 +44,7 @@ class ExamController extends Controller
      */
     public function store()
     {
+        request()->merge(['mosque_id'=>Auth::user()->teacher->mosque_id]);
         $validatedData = request()->validate(Exam::validationRules());
 
         $exam = Exam::create($validatedData);
@@ -61,8 +63,8 @@ class ExamController extends Controller
      */
     public function edit(Exam $exam)
     {
-        $students = Student::all();
-        $teachers = Teacher::all();
+        $students = Student::where(['mosque_id'=>Auth::user()->teacher->mosque_id])->get();
+        $teachers = Teacher::where(['mosque_id'=>Auth::user()->teacher->mosque_id])->get();
         $levels = Level::all();
 
         return view('user.exams.edit', compact('exam', 'students', 'teachers', 'levels'));
@@ -76,6 +78,7 @@ class ExamController extends Controller
      */
     public function update(Exam $exam)
     {
+        request()->merge(['mosque_id'=>Auth::user()->teacher->mosque_id]);
         $validatedData = request()->validate(
             Exam::validationRules($exam->id)
         );

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Auth;
 class Student extends Model
 {
     use SoftDeletes;
@@ -101,6 +101,6 @@ class Student extends Model
      **/
     public static function getList()
     {
-        return static::with(['nationality', 'gender', 'status', 'level'])->paginate(10);
+        return static::where('mosque_id',Auth::user()->teacher->mosque_id)->with(['nationality', 'gender', 'status', 'level'])->paginate(10);
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Auth;
 class Course extends Model
 {
     use SoftDeletes;
@@ -15,7 +15,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'start_time', 'end_time', 'level_id','teacher_id','year','active'
+        'start_time', 'end_time', 'level_id','teacher_id','year','active','mosque_id'
     ];
 
     /**
@@ -32,6 +32,7 @@ class Course extends Model
              'year' => 'nullable',
             // 'active' => 'required|date_format:H:i:s',
             'level_id' => 'required|numeric|exists:levels,id',
+            'mosque_id' => 'required|numeric|exists:mosques,id',
         ];
     }
 
@@ -76,6 +77,6 @@ class Course extends Model
      **/
     public static function getList()
     {
-        return static::with(['level'])->paginate(10);
+        return static::where('mosque_id',Auth::user()->teacher->mosque_id)->with(['level'])->paginate(10);
     }
 }

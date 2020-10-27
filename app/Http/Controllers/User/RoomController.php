@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Room;
 use App\Mosque;
 use App\Http\Controllers\Controller;
-
+use Auth;
 class RoomController extends Controller
 {
     /**
@@ -41,6 +41,7 @@ class RoomController extends Controller
      */
     public function store()
     {
+        request()->merge(['mosque_id'=>Auth::user()->teacher->mosque_id]);
         $validatedData = request()->validate(Room::validationRules());
 
         $room = Room::create($validatedData);
@@ -74,6 +75,7 @@ class RoomController extends Controller
      */
     public function update(Room $room)
     {
+        request()->merge(['mosque_id'=>Auth::user()->teacher->mosque_id]);
         $validatedData = request()->validate(
             Room::validationRules($room->id)
         );

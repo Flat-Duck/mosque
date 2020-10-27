@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Auth;
 class Teacher extends Model
 {
     use SoftDeletes;
@@ -41,8 +41,6 @@ class Teacher extends Model
         1 => 'كامل القران',
         2 => 'نصف القران',
         3 => 'ربع القران',
-        4 => 'Certificate option 4',
-        5 => 'Certificate option 5',
     ];
 
 
@@ -183,5 +181,14 @@ class Teacher extends Model
     public static function getList()
     {
         return static::with(['mosque', 'nationality', 'gender'])->paginate(1000);
+    }
+    /**
+     * Returns the paginated list of resources
+     *
+     * @return \Illuminate\Pagination\Paginator
+     **/
+    public static function getList2()
+    {
+        return static::where('mosque_id',Auth::user()->teacher->mosque_id)->with(['mosque', 'nationality', 'gender'])->paginate(1000);
     }
 }
