@@ -1,12 +1,12 @@
 @extends('admin.layouts.app', ['page' => ''])
 
-@section('title', 'Profile')
+@section('title', 'الملف الشخصي')
 
 @section('content')
 <div class="row">
     <div class="col-md-6">
         <div class="x_title">
-            <h2>تعديل Profile</h2>
+            <h2>تعديل الملف الشخصي</h2>
             <div class="clearfix"></div>
         </div>
 
@@ -26,38 +26,38 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">البريد الإلكتروني address</label>
+                    <label for="email">البريد الإلكتروني</label>
                     <input type="email"
                         name="email"
                         class="form-control"
                         id="email"
-                        placeholder="البريد الإلكتروني address"
+                        placeholder="البريد الإلكتروني"
                         value="{{ old('email', $admin->email) }}"
                     >
                 </div>
 
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username">إسم المستخدم</label>
                     <input type="text"
                         name="username"
                         class="form-control"
                         id="username"
-                        placeholder="Username"
+                        placeholder="إسم المستخدم"
                         value="{{ old('username', $admin->username) }}"
                     >
                 </div>
             </div>
 
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">تعديل Profile</button>
+                <button type="submit" class="btn btn-primary">تعديل الملف الشخصي</button>
             </div>
         </form>
     </div>
 
-    {{-- Password update --}}
+    {{-- كلمة المرور update --}}
     <div class="col-md-6">
         <div class="x_title">
-            <h2>Change Password</h2>
+            <h2>تغيير كلمة المرور</h2>
             <div class="clearfix"></div>
         </div>
 
@@ -66,36 +66,36 @@
 
             <div class="box-body">
                 <div class="form-group">
-                    <label for="current-password">Current Password</label>
+                    <label for="current-password"> كلمة المرور الحالية</label>
                     <input type="password"
                         name="current_password"
                         class="form-control"
                         id="current-password"
-                        placeholder="Current Password"
+                        placeholder=" كلمة المرور الحالية"
                         pattern=".{6,}"
                         title="6 characters minimum"
                     >
                 </div>
 
                 <div class="form-group">
-                    <label for="password">New Password</label>
+                    <label for="password"> كلمة المرور الجديدة</label>
                     <input type="password"
                         name="password"
                         class="form-control"
                         id="password"
-                        placeholder="New Password"
+                        placeholder=" كلمة المرور الجديدة"
                         pattern=".{6,}"
                         title="6 characters minimum"
                     >
                 </div>
 
                 <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
+                    <label for="confirm-password">تأكيد كلمة المرور</label>
                     <input type="password"
                         name="password_confirmation"
                         class="form-control"
                         id="confirm-password"
-                        placeholder="Confirm Password"
+                        placeholder="تأكيد كلمة المرور"
                         pattern=".{6,}"
                         title="6 characters minimum"
                     >
@@ -103,7 +103,7 @@
             </div>
 
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Change Password</button>
+                <button type="submit" class="btn btn-primary">تغيير كلمة المرور</button>
             </div>
         </form>
     </div>

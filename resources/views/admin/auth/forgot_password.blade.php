@@ -1,9 +1,9 @@
 @extends('admin.layouts.guest')
 
-@section('title', 'Forgot Password')
+@section('title', 'نسيت كلمة المرور')
 
 @section('content')
-    <h1>Forgot password</h1>
+    <h1>نسيت كلمة المرور</h1>
 
     @if (session('status'))
         <div class="alert alert-success">
@@ -20,12 +20,12 @@
 
         <div>
             <button type="submit" class="btn btn-primary btn-block btn-flat">
-                Send Password Reset Link
+                إرسال رسالة إعادة ظبط كلمة المرور
             </button>
         </div>
     </form>
 
     <a href="{{ route('admin.login') }}">
-        Login
+        تسجيل الدخول
     </a>
 @endsection

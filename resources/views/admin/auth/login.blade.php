@@ -1,19 +1,19 @@
 @extends('admin.layouts.guest')
 
-@section('title', 'Login')
+@section('title', 'تسجيل الدخول')
 
 @section('content')
-    <h1>Login Form</h1>
+    <h1>تسجيل الدخول</h1>
 
     <form method="post">
         @csrf
 
         <div>
-            <input type="text" name="username" class="form-control" placeholder="Username" required>
+            <input type="text" name="username" class="form-control" placeholder="إسم المستخدم" required>
         </div>
 
         <div>
-            <input type="password" name="password" class="form-control" placeholder="Password">
+            <input type="password" name="password" class="form-control" placeholder="كلمة المرور">
         </div>
 
         <div class="text-left">

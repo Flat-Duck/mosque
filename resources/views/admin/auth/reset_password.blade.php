@@ -1,9 +1,9 @@
 @extends('admin.layouts.guest')
 
-@section('title', 'Reset Password')
+@section('title', 'إعادة ظبط كلمة المرور')
 
 @section('content')
-    <h1>Reset password</h1>
+    <h1>إعادة ظبط كلمة المرور</h1>
 
     <form method="post" action="{{ route('admin.reset_password') }}">
         @csrf
@@ -21,17 +21,17 @@
         </div>
 
         <div>
-            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <input type="password" name="password" class="form-control" placeholder="كلمة المرور" required>
             <span class="fa fa-lock form-control-feedback"></span>
         </div>
 
         <div>
-            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+            <input type="password" name="password_confirmation" class="form-control" placeholder="تأكيد كلمة المرور" required>
             <span class="fa fa-lock form-control-feedback"></span>
         </div>
 
         <div>
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Reset Password</button>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">إعادة ظبط كلمة المرور</button>
         </div>
     </form>
 @endsection
