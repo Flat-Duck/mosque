@@ -26,9 +26,9 @@ class Student extends Model
     public static function validationRules()
     {
         return [
-            'national_number' => 'nullable',
+            'national_number' => 'nullable|unique:students,national_number',
             'name' => 'required|string',
-            'enrolment_number' => 'required|numeric',
+            'enrolment_number' => 'required|numeric|unique:students,enrolment_number',
             'date_birth' => 'required|date',
             'date_join' => 'required|date',
             'address' => 'required|string',
