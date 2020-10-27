@@ -1,4 +1,4 @@
-@extends('admin.layouts.guest')
+@extends('user.layouts.guest')
 
 @section('title', 'تسجيل الدخول')
 
@@ -27,7 +27,7 @@
             تسجيل دخول
         </button>
 
-        <a href="{{ route('admin.forgot_password') }}">
+        <a href="{{ route('user.forgot_password') }}">
             لقد نسيت كلمة المرور
         </a>
     </div>
