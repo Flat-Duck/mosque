@@ -59,4 +59,50 @@ class User extends Authenticatable
     {
         return static::with("teacher")->paginate(10);
     }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new UserResetPassword($token, $this->email, $this->name));
+    }
+
+    /**
+     * Profile update validation rules
+     *
+     * @return array
+     **/
+    public static function profileValidationRules()
+    {
+        return [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+        ];
+    }
+
+    /**
+     * Password update validation rules
+     *
+     * @return array
+     **/
+    public static function passwordValidationRules()
+    {
+        return [
+            'current_password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
+        ];
+    }
+    public static function validationRules($id = null)
+    {
+        return [
+            
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:admins,email,'.$id,
+            'password' => 'required|string',
+        ];
+    } 
 }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     /**
-     * Displays the dashboard page to the admin
+     * Displays the dashboard page to the user
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,47 +20,47 @@ class AdminController extends Controller
     }
 
     /**
-     * Displays the profile page to the admin
+     * Displays the profile page to the user
      *
      * @return \Illuminate\Http\Response
      */
     public function profile()
     {
-        $admin = Auth::guard('admin')->user();
+        $user = Auth::guard('web')->user();
 
-        return view('user.profile', compact('admin'));
+        return view('user.profile', compact('user'));
     }
 
     /**
-     * Updates admin profile details
+     * Updates user profile details
      *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function profileUpdate()
     {
-        $validatedData = request()->validate(Admin::profileValidationRules());
+        $validatedData = request()->validate(User::profileValidationRules());
 
-        $admin = Auth::guard('admin')->user();
+        $user = Auth::guard('web')->user();
 
-        $admin->update($validatedData);
+        $user->update($validatedData);
 
         return back()->with(['type' => 'success', 'message' => 'تم تعديل الملف الشخصي بنجاح']);
     }
 
     /**
-     * Updates admin password
+     * Updates user password
      *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function passwordUpdate()
     {
-        $validatedData = request()->validate(Admin::passwordValidationRules());
+        $validatedData = request()->validate(User::passwordValidationRules());
 
-        $admin = Auth::guard('admin')->user();
+        $user = Auth::guard('web')->user();
 
-        if (Hash::check(request('current_password'), $admin->password)) {
-            $admin->password = bcrypt(request('password'));
-            $admin->save();
+        if (Hash::check(request('current_password'), $user->password)) {
+            $user->password = bcrypt(request('password'));
+            $user->save();
 
             return back()->with(['type' => 'success', 'message' => 'تم تعديل كلمة المرور بنجاح']);
         }
