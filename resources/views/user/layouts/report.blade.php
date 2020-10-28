@@ -25,14 +25,15 @@
             }
             
             .invoiceNbr {
-            font-size: 40px;
+            font-size: 20px;
             margin-left: 30px;
             margin-top: 30px;
             float: left;
             }
             
             .logo {
-            float: right;
+           float: inherit;
+            text-align: -webkit-center;
             }
             
             .from {
@@ -107,27 +108,28 @@
        body {
         font-family: 'Segoe UI', 'Microsoft Sans Serif', sans-serif;
         }
-        
-        header:before,
-        header:after {
-        content: " ";
-        display: table;
-        }
-        
-        header:after {
-        clear: both;
-        }
-        
-        .invoiceNbr {
-        font-size: 30pt;
-        margin-left: 30pt;
-        margin-top: 30pt;
-        float: left;
-        }
-        
-        .logo {
-        float: right;
-        }
+         header:before,
+            header:after {
+            content: " ";
+            display: table;
+            }
+            
+            header:after {
+            clear: both;
+            }
+            
+            .invoiceNbr {
+            font-size: 20px;
+            margin-left: 30px;
+            margin-top: 30px;
+            float: left;
+            }
+            
+            .logo {
+           float: inherit;
+            text-align: -webkit-center;
+            }
+            
         
         .from {
         float: right;
@@ -186,12 +188,12 @@
 <body dir="rtl">
     <header>
         <div class="logo">
-            <img src="../images/genericlogo.jpg" alt="generic business logo" height="181" width="167" />
+          <h1>  الهيئة العامة للاوقاف</h1>
+        <h3>{{\Auth::user()->teacher->mosque->name}}</h3>
+        <h5>{{$reportName}}</h5>
         </div>
         <div class="invoiceNbr">
-            الهيئة العامة للاوقاف
-            <br />
-            {{Carbon\Carbon::now()}}
+            تاريخ: {{Carbon\Carbon::now()}}
         </div>
     </header>
 

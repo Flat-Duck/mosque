@@ -22,7 +22,7 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>الرقم الوطني</th>
+            <th>رقم القيد</th>
             <th>الإسم</th>
             <th>تاريخ الميلاد</th>
             <th>رقم الهاتف</th>
@@ -34,7 +34,7 @@
         @forelse ($students as $student)
             <tr>
                 <td>{{ $student->id }}</td>
-                <td>{{ $student->national_number }}</td>
+                <td>{{ $student->enrolment_number }}</td>
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->date_birth }}</td>
                 <td>{{ $student->phone }}</td>

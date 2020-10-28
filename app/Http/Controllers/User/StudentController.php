@@ -11,6 +11,7 @@ use App\Level;
 use App\Course;
 use App\Http\Controllers\Controller;
 use Auth;
+use Carbon\Carbon;
 class StudentController extends Controller
 {
     /**
@@ -20,6 +21,12 @@ class StudentController extends Controller
      */
     public function index()
     {
+//                $newId = Student::latest()->first()->id+1;
+//         $newSecq = Carbon::now()->format('y'). "2" .request()->gender_id ;
+
+
+//         $enrolment_number =$newSecq. $newId;
+// dd($enrolment_number);
         $students = Student::getList();
 
         return view('user.students.index', compact('students'));
@@ -48,7 +55,14 @@ class StudentController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
-    {request()->merge(['mosque_id'=>Auth::user()->teacher->mosque_id]);
+    {
+        $newId = Student::where(['mosque_id'=>Auth::user()->teacher->mosque_id])->whereYear('created_at', Carbon::now()->year)->count()+1;
+        $newSecq = Auth::user()->teacher->mosque_id. Carbon::now()->format('y');
+        $enrolment_number = $newSecq. $newId;
+        // dd($enrolment_number);
+
+        request()->merge(['enrolment_number'=>$enrolment_number]);
+        request()->merge(['mosque_id'=>Auth::user()->teacher->mosque_id]);
         $validatedData = request()->validate(Student::validationRules());
 
         $student = Student::create($validatedData);

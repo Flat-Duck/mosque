@@ -25,7 +25,7 @@
                 id="national_number"
             >
         </div>
-            <div class="box-body">
+            {{-- <div class="box-body">
         <div class="form-group">
             <label for="enrolment_number">رقم القيد</label>
             <input type="number"
@@ -37,7 +37,7 @@
                 step="any"
                 id="enrolment_number"
             >
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="name">الإسم</label>

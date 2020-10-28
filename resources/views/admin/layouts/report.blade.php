@@ -24,15 +24,19 @@
             clear: both;
             }
             
-            .invoiceNbr {
-            font-size: 40px;
+            .mName{
+                font-size: 30px;
+            }
+           .invoiceNbr {
+            font-size: 20px;
             margin-left: 30px;
             margin-top: 30px;
             float: left;
             }
             
             .logo {
-            float: right;
+            float: inherit;
+            text-align: -webkit-center;
             }
             
             .from {
@@ -186,12 +190,12 @@
 <body dir="rtl">
     <header>
         <div class="logo">
-            <img src="../images/genericlogo.jpg" alt="generic business logo" height="181" width="167" />
+           <h1>الهيئة العامة للاوقاف</h1>
+          
+           <div class="mName">{!! $reportName !!}</div>
         </div>
         <div class="invoiceNbr">
-            الهيئة العامة للاوقاف
-            <br />
-            {{Carbon\Carbon::now()}}
+           تاريخ:  {{Carbon\Carbon::now()}}
         </div>
     </header>
 

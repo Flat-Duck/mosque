@@ -26,8 +26,8 @@
                 id="national_number"
             >
         </div>
-{{-- <input type="hidden" name="enrolment_number" value="{{ old('enrolment_number', $student->enrolment_number) }}"> --}}
-        <div class="form-group">
+<input type="hidden" name="enrolment_number" value="{{ old('enrolment_number', $student->enrolment_number) }}">
+        {{-- <div class="form-group">
             <label for="enrolment_number">رقم القيد</label>
             <input  type="number"
                 class="form-control"
@@ -38,7 +38,7 @@
                 step="any"
                 id="enrolment_number"
             >
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="name">الإسم</label>

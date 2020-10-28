@@ -36,19 +36,26 @@ class RerportController extends Controller
 
     public function genders()
     {
-     //   dd(Auth::guard('web')->user()->teacher->mosque_id);
+        $gender = Gender::find(request()->gender_id)->name;
+        $reportName =' كشف بأسماء طلبة  " ' .$gender. '"';
+
         $students = Student::where('mosque_id', Auth::guard('web')->user()->teacher->mosque_id)->where('gender_id', request()->gender_id)->get();
-        return view("user.reports.students", compact('students'));
+        return view("user.reports.students", compact('students','reportName'));
     }
 
         public function teachers()
     {
+        $reportName =' كشف بأسماء المعلمين  ';
+
         $teachers = Teacher::where('mosque_id', Auth::guard('web')->user()->teacher->mosque_id)->get();
-        return view("user.reports.teachers", compact('teachers'));
+        return view("user.reports.teachers", compact('teachers','reportName'));
     }
 
     public function finishers()
     {
+         $level = Level::find(request()->level_id)->name;
+        $reportName =' كشف بأسماء الطلبة في مستوى  " ' .$level. '"';
+
         $exams = Exam::where('level_id',request()->level_id)->get();
         $students = null;
         foreach ($exams as $k => $exam) {
@@ -61,6 +68,6 @@ class RerportController extends Controller
         }
         
      //   dd($students);
-        return view("user.reports.students", compact('students'));
+        return view("user.reports.students", compact('students','reportName'));
     }
 }
