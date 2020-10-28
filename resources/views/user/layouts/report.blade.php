@@ -10,176 +10,182 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <style media="screen">
-      body {
+        body {
             font-family: 'Segoe UI', 'Microsoft Sans Serif', sans-serif;
-            }
-            
-            header:before,
-            header:after {
+        }
+
+        header:before,
+        header:after {
             content: " ";
             display: table;
-            }
-            
-            header:after {
+        }
+
+        header:after {
             clear: both;
-            }
-            
-            .invoiceNbr {
+        }
+
+        .invoiceNbr {
             font-size: 20px;
             margin-left: 30px;
             margin-top: 30px;
             float: left;
-            }
-            
-            .logo {
-           float: inherit;
+        }
+
+        .logo {
+            float: inherit;
             text-align: -webkit-center;
-            }
-            
-            .from {
+        }
+
+        .from {
             float: right;
-            }
-            
-            .to {
+        }
+
+        .to {
             float: left;
-            }
-            
-            .fromto {
+        }
+
+        .fromto {
             border-style: solid;
             border-width: 1px;
             border-color: #e8e5e5;
             border-radius: 5px;
             margin: 20px;
             min-width: 200px;
-            }
-            
-            .fromtocontent {
+        }
+
+        .fromtocontent {
             margin: 10px;
             margin-left: 15px;
-            }
-            
-            .panel {
+        }
+
+        .panel {
             background-color: #e8e5e5;
             padding: 7px;
-            }
-            
-            .items {
+        }
+
+        .items {
             clear: both;
             display: table;
             padding: 20px;
-            }
-            
-            /* Factor out common styles for all of the "col-" classes.*/
-            div[class^="col-"] {
+        }
+
+        /* Factor out common styles for all of the "col-" classes.*/
+        div[class^="col-"] {
             display: table-cell;
             padding: 7px;
-            }
-            
-            /*for clarity name column styles by the percentage of width */
-            .col-1-5 {
+        }
+
+        /*for clarity name column styles by the percentage of width */
+        .col-1-5 {
             width: 5%;
-            }
-            .col-1-10 {
+        }
+
+        .col-1-10 {
             width: 10%;
-            }
-            .col-1-20 {
+        }
+
+        .col-1-20 {
             width: 20%;
-            }
-            .col-1-30 {
+        }
+
+        .col-1-30 {
             width: 30%;
-            }
-            .col-1-40 {
+        }
+
+        .col-1-40 {
             width: 40%;
-            }
-            .col-1-60 {
+        }
+
+        .col-1-60 {
             width: 60%;
-            }
-            
-            .col-1-52 {
+        }
+
+        .col-1-52 {
             width: 52%;
-            }
-            
-            .row {
+        }
+
+        .row {
             display: table-row;
             page-break-inside: avoid;
-            }
-          </style>
-    <style media="print">
-       body {
-        font-family: 'Segoe UI', 'Microsoft Sans Serif', sans-serif;
         }
-         header:before,
-            header:after {
+    </style>
+    <style media="print">
+        body {
+            font-family: 'Segoe UI', 'Microsoft Sans Serif', sans-serif;
+        }
+
+        header:before,
+        header:after {
             content: " ";
             display: table;
-            }
-            
-            header:after {
+        }
+
+        header:after {
             clear: both;
-            }
-            
-            .invoiceNbr {
+        }
+
+        .invoiceNbr {
             font-size: 20px;
             margin-left: 30px;
             margin-top: 30px;
             float: left;
-            }
-            
-            .logo {
-           float: inherit;
+        }
+
+        .logo {
+            float: inherit;
             text-align: -webkit-center;
-            }
-            
-        
+        }
+
+
         .from {
-        float: right;
+            float: right;
         }
-        
+
         .to {
-        float: left;
+            float: left;
         }
-        
+
         .fromto {
-        border-style: solid;
-        border-width: 1pt;
-        border-color: #e8e5e5;
-        border-radius: 5pt;
-        margin: 20pt;
-        min-width: 200pt;
+            border-style: solid;
+            border-width: 1pt;
+            border-color: #e8e5e5;
+            border-radius: 5pt;
+            margin: 20pt;
+            min-width: 200pt;
         }
-        
+
         .fromtocontent {
-        margin: 10pt;
-        margin-left: 15pt;
+            margin: 10pt;
+            margin-left: 15pt;
         }
-        
+
         .panel {
-        background-color: #e8e5e5;
-        padding: 7pt;
+            background-color: #e8e5e5;
+            padding: 7pt;
         }
-        
+
         .items {
-        clear: both;
-        display: table;
-        padding: 20pt;
+            clear: both;
+            display: table;
+            padding: 20pt;
         }
-        
+
         div[class^="col-"] {
-        display: table-cell;
-        padding: 7pt;
+            display: table-cell;
+            padding: 7pt;
         }
-        
+
         .col-1-10 {
-        width: 10%;
+            width: 10%;
         }
-        
+
         .col-1-52 {
-        width: 52%;
+            width: 52%;
         }
-        
+
         .row {
-        display: table-row;
-        page-break-inside: avoid;
+            display: table-row;
+            page-break-inside: avoid;
         }
     </style>
 
@@ -188,9 +194,9 @@
 <body dir="rtl">
     <header>
         <div class="logo">
-          <h1>  الهيئة العامة للاوقاف</h1>
-        <h3>{{\Auth::user()->teacher->mosque->name}}</h3>
-        <h5>{{$reportName}}</h5>
+            <h1> الهيئة العامة للاوقاف</h1>
+            <h3>{{\Auth::user()->teacher->mosque->name}}</h3>
+            <h5>{{$reportName}}</h5>
         </div>
         <div class="invoiceNbr">
             تاريخ: {{Carbon\Carbon::now()}}
